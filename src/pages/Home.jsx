@@ -1,7 +1,25 @@
 import React from "react";
 
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Contact from "../components/Contact";
+import Customers from "../components/Customers";
+import About from "../components/About";
+import Career from "../components/Career";
+import Footer from "../components/Footer";
+
 const Home = () => {
-  return <div className="font-bold underline text-2xl">Ini Home BGCS</div>;
+  return (
+    <div className="font-sans text-gray-900 App">
+      <Navbar />
+      <Hero />
+      <About />
+      <Customers />
+      <Contact />
+      <Career />
+      <Footer />
+    </div>
+  )
 };
 
 export default Home;
