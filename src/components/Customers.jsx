@@ -1,8 +1,8 @@
 import React from "react";
 
 const customers = [
-  { name: "Mandiri Sekuritas", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Amartha", logo: "../assets/img/logo_mandiri.png" },
+  { name: "Mandiri Sekuritas", logo: "../assets/img/logo_mandiri_sekuritas.png" },
+  { name: "Amartha", logo: "../assets/img/logo_amartha.png" },
   { name: "Paxel", logo: "../assets/img/logo_mandiri.png" },
   { name: "Wahyoo", logo: "../assets/img/logo_mandiri.png" },
   { name: "Cisco", logo: "../assets/img/logo_mandiri.png" },
