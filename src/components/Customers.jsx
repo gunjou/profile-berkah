@@ -1,19 +1,19 @@
 import React from "react";
 
 const customers = [
-  { name: "Mandiri Sekuritas", logo: "../assets/img/logo_mandiri_sekuritas.png" },
-  { name: "Amartha", logo: "../assets/img/logo_amartha.png" },
-  { name: "Paxel", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Wahyoo", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Cisco", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Hubble", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Legoas", logo: "../assets/img/logo_mandiri.png" },
-  { name: "CBN", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Ciputra", logo: "../assets/img/logo_mandiri.png" },
-  { name: "NTUC Income", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Lazada", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Univesitas Airlanga", logo: "../assets/img/logo_mandiri.png" },
-  { name: "Jawa Pos", logo: "../assets/img/logo_mandiri.png" },
+  { name: "Mandiri Sekuritas", logo: "logo_mandiri_sekuritas.png" },
+  { name: "Amartha", logo: "logo_amartha.png" },
+  { name: "Paxel", logo: "logo_amartha.png" },
+  { name: "Wahyoo", logo: "logo_amartha.png" },
+  { name: "Cisco", logo: "logo_amartha.png" },
+  { name: "Hubble", logo: "logo_amartha.png" },
+  { name: "Legoas", logo: "logo_amartha.png" },
+  { name: "CBN", logo: "logo_amartha.png" },
+  { name: "Ciputra", logo: "logo_amartha.png" },
+  { name: "NTUC Income", logo: "logo_amartha.png" },
+  { name: "Lazada", logo: "logo_amartha.png" },
+  { name: "Univesitas Airlanga", logo: "logo_amartha.png" },
+  { name: "Jawa Pos", logo: "logo_amartha.png" },
 ];
 
 export default function Customers() {
