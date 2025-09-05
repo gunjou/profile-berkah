@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Customers from "../components/Customers";
 import About from "../components/About";
 import Career from "../components/Career";
+import Location from "../components/Location";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -17,9 +18,10 @@ const Home = () => {
       <Customers />
       <Contact />
       <Career />
+      <Location />
       <Footer />
     </div>
-  )
+  );
 };
 
 export default Home;
