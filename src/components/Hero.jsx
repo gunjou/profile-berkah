@@ -4,31 +4,25 @@ const slides = [
   {
     id: 1,
     image: "https://picsum.photos/1600/600?random=1",
-    title: "Solusi Digital untuk Bisnis Anda",
-    desc: "Kami menyediakan aplikasi mobile, website, dan desain modern",
+    title: "Membangun dengan Kualitas, Menyediakan dengan Integritas",
+    desc: "PT. Berkah Angsana Teknika adalah mitra terpercaya dalam bidang MEP, Sipil, Fabrikasi Baja, dan Trading.",
   },
   {
     id: 2,
     image: "https://picsum.photos/1600/600?random=2",
-    title: "Bangun Website Profesional",
-    desc: "Website cepat, aman, dan ramah pengguna untuk semua kebutuhan",
-  },
-  {
-    id: 3,
-    image: "https://picsum.photos/1600/600?random=3",
-    title: "UI/UX Design Modern",
-    desc: "Tingkatkan pengalaman pengguna dengan desain berkualitas",
+    title: "Membangun dengan Kualitas, Menyediakan dengan Integritas",
+    desc: "Kami hadir untuk mendukung sektor energi, infrastruktur, dan industri dengan layanan yang terintegrasi dan produk berkualitas.",
   },
 ];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
 
-  // Auto play setiap 5 detik
+  // Auto play setiap 8 detik
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -52,12 +46,6 @@ export default function Hero() {
           <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-white">
             <h2 className="mb-4 text-4xl font-bold md:text-6xl font-poppins">{slide.title}</h2>
             <p className="mb-6 text-lg font-poppins">{slide.desc}</p>
-            <a
-              href="#services"
-              className="px-6 py-3 bg-red-600 rounded-lg hover:bg-red-700 font-poppins"
-            >
-              Jelajahi Layanan
-            </a>
           </div>
         </div>
       ))}

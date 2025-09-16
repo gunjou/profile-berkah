@@ -7,43 +7,35 @@ export default function AboutUs() {
       <div className="grid items-center gap-12 mx-auto max-w-7xl md:grid-cols-2">
         
         {/* Gambar kiri */}
-        <div className="relative">
+        <div className="relative w-full max-w-md overflow-hidden rounded-lg shadow-lg">
           <img
             src={About}
             alt="Tentang Kami"
-            className="rounded-lg shadow-lg"
+            className="object-cover w-full h-auto"
           />
-          <div className="absolute px-4 py-2 font-semibold text-black bg-white rounded-md shadow top-4 left-4 font-poppins">
+          <div className="absolute px-4 py-2 font-semibold text-black bg-white rounded shadow top-3 right-3 font-poppins">
             Tentang Kami
           </div>
         </div>
 
         {/* Konten kanan */}
         <div>
-          <h2 className="mb-6 text-2xl font-bold md:text-3xl font-poppins">PT. Berkah Angsana</h2>
+          <h2 className="mb-6 text-2xl font-bold text-left md:text-3xl font-poppins">PT. Berkah Angsana</h2>
           
           <div className="space-y-6 text-gray-300">
             <div>
-              <h3 className="font-semibold text-white font-poppins">Mobile Application</h3>
-              <p className="text-sm font-poppins">
-                Building mobile applications is never easy. From logistics app to e-commerce app,
-                we’ve done them all. Done them all well. Done them fast.
+              <h3 className="font-semibold text-left text-white font-poppins">Tentang Kami</h3>
+              <p className="mb-4 text-sm leading-relaxed text-left font-poppins">
+                Berdiri sejak tahun 2020, PT. Berkah Angsana Teknika telah berkembang menjadi perusahaan yang bergerak di empat bidang utama: MEP, Sipil, Steel Fabricator, dan Trading.
               </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-white font-poppins">Web Application</h3>
-              <p className="text-sm font-poppins">
-                We can build any web application you need. Company profile? E-commerce?
-                Custom features? We’ve got you covered with a strong team of web developers.
+              <p className="mb-4 text-sm leading-relaxed text-left font-poppins">
+                Berbasis di Kabupaten Lombok Barat, Nusa Tenggara Barat, kami tergabung dalam Asosiasi GAPENSI dan telah terpercaya sebagai vendor resmi PLN serta mengantongi sertifikasi ISO.
               </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-white font-poppins">UI/UX Design</h3>
-              <p className="text-sm font-poppins">
-                All things are designed & few things are designed well. 
-                We try to elevate your ideas with great UI/UX design suited to your taste.
+              <p className="mb-4 text-sm leading-relaxed text-left font-poppins">
+                Komitmen kami sederhana namun kuat: memberikan hasil maksimal, dengan standar mutu terbaik, serta menjaga integritas dalam setiap pekerjaan.
+              </p>
+               <p className="text-sm leading-relaxed text-left font-poppins">
+                Kami percaya bahwa setiap proyek bukan hanya tentang membangun atau menyediakan barang, tetapi juga tentang membangun kepercayaan dan hubungan jangka panjang dengan mitra kami.
               </p>
             </div>
           </div>
