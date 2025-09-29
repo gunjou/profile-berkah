@@ -24,8 +24,17 @@ export default function Location() {
 
         {/* Kolom Kanan */}
         <div className="text-left">
+          <h2 className="mb-4 text-xl font-bold text-left font-poppins">
+            Alamat:
+          </h2>
           <p className="mb-6 text-sm text-gray-300 md:text-base font-poppins">
-            Jl. Raya pengsong Raya Ruko Bukit Citra Kencana No.14A, Perampuan, Kec. Labuapi, Kabupaten Lombok Barat, Nusa Tenggara Barat. 83362
+            Ruko Bukit Citra Kencana No. 6, Jl. Pengsong Raya, Desa Perampuan, Kecamatan Labuapi, Kabupaten Lombok Barat, Nusa Tenggara Barat (83361)
+          </p>
+          <p className="mb-1 text-sm text-gray-300 md:text-base font-poppins">
+            Telepon: (0370) 7853692
+          </p>
+          <p className="text-sm text-gray-300 md:text-base font-poppins">
+            Email: sales@berkahangsana.com
           </p>
         </div>
       </div>

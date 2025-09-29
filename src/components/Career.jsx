@@ -17,14 +17,11 @@ export default function CareerSection() {
         </div>
 
         {/* Kolom Kanan */}
-        <div className="text-left">
-          <p className="mb-6 text-sm text-gray-300 md:text-base font-poppins">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-            fringilla in massa non scelerisque. Nunc feugiat lacus eget erat,
-            urna ornare risus malesuada. Cursus mattis vel sed ipsum eget
-            tincidunt ultrices.
+        <div className="text-left font-poppins">
+          <p className="mb-6 text-sm text-gray-300 md:text-base">
+            Ingin berkarir bersama kami? klik tautan berikut untuk melihat peluang karir yang tersedia.
           </p>
-          <button className="px-6 py-2 text-white transition bg-gray-800 rounded-md hover:bg-gray-900 font-poppins">
+          <button className="px-6 py-2 text-white transition bg-gray-800 rounded-md hover:bg-gray-900">
             Apply
           </button>
         </div>

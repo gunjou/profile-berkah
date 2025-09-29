@@ -18,11 +18,11 @@ const slides = [
 export default function Hero() {
   const [current, setCurrent] = useState(0);
 
-  // Auto play setiap 8 detik
+  // Auto play setiap 10 detik
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 8000);
+    }, 10000);
     return () => clearInterval(timer);
   }, []);
 
