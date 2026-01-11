@@ -1,24 +1,27 @@
-import React from "react";
+// src/pages/Home.jsx
 
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Contact from "../components/Contact";
-import Customers from "../components/Customers";
-import About from "../components/About";
-import Career from "../components/Career";
-import Location from "../components/Location";
+import React from "react";
+import Headers from "../components/Header"; // Pastikan path sesuai dengan struktur proyek Anda
+import HeroSection from "../components/HeroSection";
+import AboutUs from "../components/AboutUs";
+import StatsSection from "../components/StatsSection";
+import ServicesSection from "../components/ServicesSection";
+import ProjectsSection from "../components/ProjectsSection";
+import ClientsCarousel from "../components/ClientsCarousel";
+import PartnersSection from "../components/PartnersSection";
 import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div className="font-sans text-gray-900 App">
-      <Navbar />
-      <Hero />
-      <About />
-      <Customers />
-      <Contact />
-      <Career />
-      <Location />
+    // Menggunakan `antialiased` dan latar belakang default putih
+    <div className="min-h-screen antialiased bg-white">
+      <Headers />
+      <HeroSection />
+      <AboutUs />
+      <ClientsCarousel />
+      <ServicesSection />
+      <ProjectsSection />
+      <PartnersSection />
       <Footer />
     </div>
   );

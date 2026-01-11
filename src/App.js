@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import Coba from "./pages/Coba";
+// import Coba from "./pages/Coba";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/coba" element={<Coba />} />
+          {/* <Route path="/coba" element={<Coba />} /> */}
 
           {/* 404 Fallback */}
           <Route path="/404" element={<NotFound />} />
