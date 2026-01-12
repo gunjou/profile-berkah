@@ -26,6 +26,7 @@ const HeroSection = () => {
 
   return (
     <section
+      id="beranda"
       className="relative w-full h-screen flex items-center"
       style={{
         backgroundImage: `url(${bgHero})`,

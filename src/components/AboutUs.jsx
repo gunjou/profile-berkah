@@ -5,7 +5,10 @@ import img2 from "../assets/img/k3/3.jpg";
 
 const AboutUs = () => {
   return (
-    <section className="w-full py-20 bg-white dark:bg-[#1a1a1a] transition-colors">
+    <section
+      id="tentang"
+      className="w-full py-20 bg-white dark:bg-[#1a1a1a] transition-colors"
+    >
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Images */}
         <div className="relative w-full">
@@ -78,7 +81,7 @@ const AboutUs = () => {
               className="w-14 h-14 rounded-full border-2 border-angsana-merah"
             />
             <div>
-              <h4 className="text-lg font-bold text-teknika-hitam dark:text-white">
+              <h4 className="text-lg font-bold text-left text-teknika-hitam dark:text-white">
                 Andi Firmansyah
               </h4>
               <p className="text-gray-600 dark:text-gray-400 text-sm">

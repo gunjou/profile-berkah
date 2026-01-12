@@ -7,6 +7,7 @@ import Logo from "../assets/img/logo_white.png";
 const Footer = () => {
   return (
     <footer
+      id="footer"
       className="
         w-full pt-20 pb-10 
         bg-gradient-to-r from-black via-[#0c0003] to-[#60000d]

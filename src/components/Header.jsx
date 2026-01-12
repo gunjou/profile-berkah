@@ -9,6 +9,7 @@ import {
 } from "react-icons/fi";
 import LogoLight from "../assets/img/logo_large.png";
 import LogoDark from "../assets/img/logo_white.png";
+import { Target } from "lucide-react";
 
 const Header = () => {
   const [openMobile, setOpenMobile] = useState(false);
@@ -29,8 +30,8 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: "Beranda" },
-    { label: "Tentang" },
+    { label: "Beranda", target: "beranda" },
+    { label: "Tentang", target: "tentang" },
     {
       label: "Layanan",
       dropdown: ["Konstruksi Bangunan", "Renovasi Rumah", "Perencanaan Proyek"],
@@ -43,8 +44,23 @@ const Header = () => {
       label: "Berita",
       dropdown: ["Artikel", "Pengumuman", "Event"],
     },
-    { label: "Kontak" },
+    { label: "Kontak", target: "footer" },
   ];
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const yOffset = -80; // tinggi header
+    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+
+    setOpenMobile(false); // tutup menu mobile
+  };
 
   return (
     <header
@@ -72,9 +88,13 @@ const Header = () => {
           {menuItems.map((item, i) => (
             <div key={i} className="relative group cursor-pointer">
               <div className="flex items-center gap-1">
-                <span className="text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition">
+                <span
+                  onClick={() => item.target && scrollToSection(item.target)}
+                  className="text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition"
+                >
                   {item.label}
                 </span>
+
                 {item.dropdown && (
                   <FiChevronDown className="text-gray-500 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white" />
                 )}
