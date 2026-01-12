@@ -2,10 +2,10 @@ import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
 
 // Dummy images (bisa ganti ke path Anda)
-import img1 from "../assets/img/maintenance.jpg";
-import img2 from "../assets/img/mep.jpg";
-import img3 from "../assets/img/welder.jpeg";
-import img4 from "../assets/img/scaffolding.jpeg";
+import img1 from "../assets/img/maintenance_berkah.jpg";
+import img2 from "../assets/img/mep_berkah.jpg";
+import img3 from "../assets/img/welder_berkah.jpg";
+import img4 from "../assets/img/scaffholding_berkah.jpg";
 
 const services = [
   {

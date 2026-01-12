@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import bgHero from "../assets/img/hero_bg.jpg";
+import bgHero from "../assets/img/maintenance_berkah.jpg";
 
 const taglines = [
   "Membangun Masa Depan dengan Kualitas Terbaik.",

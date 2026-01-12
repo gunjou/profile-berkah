@@ -1,5 +1,7 @@
 import React from "react";
 import { FiCheckCircle } from "react-icons/fi";
+import img1 from "../assets/img/scaffholding_berkah.jpg";
+import img2 from "../assets/img/k3/3.jpg";
 
 const AboutUs = () => {
   return (
@@ -10,7 +12,7 @@ const AboutUs = () => {
           {/* Large image */}
           <div className="border-2 border-angsana-merah p-2 inline-block">
             <img
-              src="https://picsum.photos/600/500?random=1"
+              src={img1}
               alt="Konstruksi"
               className="w-full h-auto object-cover"
             />
@@ -18,11 +20,7 @@ const AboutUs = () => {
 
           {/* Small image overlay */}
           <div className="absolute -bottom-10 left-14 w-64 border-2 border-angsana-merah p-2 bg-white dark:bg-[#1a1a1a]">
-            <img
-              src="https://picsum.photos/500/350?random=2"
-              alt="Tim"
-              className="w-full h-auto object-cover"
-            />
+            <img src={img2} alt="Tim" className="w-full h-auto object-cover" />
           </div>
         </div>
 

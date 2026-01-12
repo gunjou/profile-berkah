@@ -2,51 +2,137 @@ import React, { useState } from "react";
 import { FiSquare, FiArrowUpRight } from "react-icons/fi";
 
 // Dummy images (ganti sesuai kebutuhan)
-import img1 from "../assets/img/hero_bg.jpg";
-import img2 from "../assets/img/maintenance.jpg";
-import img3 from "../assets/img/mep.jpg";
-import img4 from "../assets/img/welder.jpeg";
-import img5 from "../assets/img/scaffolding.jpeg";
-import img6 from "../assets/img/welder.jpeg";
+import img1 from "../assets/img/sipil/1.jpg";
+import img2 from "../assets/img/mep/2.jpg";
+import img3 from "../assets/img/welding/1.jpg";
+import img4 from "../assets/img/scaffholding/1.jpg";
+import img5 from "../assets/img/mep/3.jpg";
+import img6 from "../assets/img/welding/2.jpg";
+import img7 from "../assets/img/scaffholding/2.jpg";
+import img8 from "../assets/img/scaffholding/3.jpg";
+import img9 from "../assets/img/mep/1.jpg";
+import img10 from "../assets/img/mep/4.jpg";
+import img11 from "../assets/img/sipil/1.jpg";
+import img12 from "../assets/img/sipil/2.jpg";
+import img13 from "../assets/img/sipil/3.jpg";
+import img14 from "../assets/img/k3/briefing.jpg";
+import img15 from "../assets/img/k3/2.jpg";
+import img16 from "../assets/img/k3/3.jpg";
+import img17 from "../assets/img/k3/4.jpg";
+import img18 from "../assets/img/k3/5.jpg";
 
-const categories = ["All", "Maintenance", "MEP", "Welding", "Scaffolding"];
+const categories = [
+  "All",
+  "Maintenance",
+  "MEP",
+  "Welding",
+  "Scaffolding",
+  "K3",
+];
 
 const projects = [
   {
-    title: "Perawatan & Perbaikan Gedung",
-    desc: "Proyek maintenance fasilitas operasional untuk menjaga keandalan infrastruktur.",
+    title: "Lorem Ipsum Maintenance",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "Maintenance",
     img: img1,
   },
   {
-    title: "Instalasi Panel & Kelistrikan",
-    desc: "Pemasangan sistem mekanikal dan elektrikal sesuai standar industri.",
+    title: "Lorem Ipsum MEP",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "MEP",
     img: img2,
   },
   {
-    title: "Pabrikasi Dudukan Panel",
-    desc: "Pembuatan struktur metal presisi untuk mendukung kegiatan industri.",
+    title: "Lorem Ipsum Welding",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "Welding",
     img: img3,
   },
   {
-    title: "Pemasangan Scaffolding Proyek Industri",
-    desc: "Penyediaan dan pemasangan scaffolding untuk pekerjaan konstruksi besar.",
+    title: "Lorem Ipsum Scaffolding",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "Scaffolding",
     img: img4,
   },
   {
-    title: "Peremajaan Sistem Kelistrikan",
-    desc: "Upgrade sistem E-MEP untuk fasilitas industri manufaktur.",
+    category: "Scaffolding",
+    title: "Lorem Ipsum Scaffolding",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img7,
+  },
+  {
+    category: "Scaffolding",
+    title: "Lorem Ipsum Scaffolding",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img8,
+  },
+  {
+    title: "Lorem Ipsum MEP",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "MEP",
     img: img5,
   },
   {
-    title: "Pembuatan Bracket Mekanikal",
-    desc: "Kustom pabrikasi untuk mendukung proses produksi.",
+    title: "Lorem Ipsum Welding",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     category: "Welding",
     img: img6,
+  },
+  {
+    category: "MEP",
+    title: "Lorem Ipsum MEP",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img9,
+  },
+  {
+    category: "MEP",
+    title: "Lorem Ipsum MEP",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img10,
+  },
+
+  {
+    category: "Maintenance",
+    title: "Lorem Ipsum Maintenance",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img12,
+  },
+  {
+    category: "Maintenance",
+    title: "Lorem Ipsum Maintenance",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img13,
+  },
+  {
+    category: "K3",
+    title: "Briefing Keselamatan Kerja",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img14,
+  },
+  {
+    category: "K3",
+    title: "Lorem Ipsum K3",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img15,
+  },
+  {
+    category: "K3",
+    title: "Lorem Ipsum K3",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img16,
+  },
+  {
+    category: "K3",
+    title: "Lorem Ipsum K3",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img17,
+  },
+  {
+    category: "K3",
+    title: "Lorem Ipsum K3",
+    desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    img: img18,
   },
 ];
 
