@@ -10,6 +10,8 @@ import ArticlePage from "./pages/ArticlePage";
 import ArticleDetail from "./pages/ArticleDetail";
 import Pengumuman from "./pages/Pengumuman";
 import PengumumanDetail from "./pages/PengumumanDetail";
+import EventPage from "./pages/EventPage";
+import EventDetailPage from "./pages/EventDetailPage";
 
 import NotFound from "./pages/NotFound";
 
@@ -32,6 +34,11 @@ function App() {
           {/* menu pengumuman */}
           <Route path="/pengumuman" element={<Pengumuman />} />
           <Route path="/pengumuman/:slug" element={<PengumumanDetail />} />
+
+          {/* Menu event */}
+          <Route path="/event" element={<EventPage />} />
+          <Route path="/event/:slug" element={<EventDetailPage />} />
+
           {/* 404 Fallback */}
           <Route path="/404" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/404" />} />
