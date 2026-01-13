@@ -32,7 +32,10 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-24 bg-gradient-to-r from-black via-[#0c0003] to-[#60000d] dark:bg-[#111] transition-colors">
+    <section
+      id="layanan"
+      className="w-full py-24 bg-gradient-to-r from-black via-[#0c0003] to-[#60000d] dark:bg-[#111] transition-colors"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <div className="text-center mb-12">

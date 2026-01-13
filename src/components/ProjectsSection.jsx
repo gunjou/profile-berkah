@@ -143,7 +143,10 @@ const ProjectsSection = () => {
     active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="w-full py-20 bg-white dark:bg-[#111] transition-colors">
+    <section
+      id="proyek"
+      className="w-full py-20 bg-white dark:bg-[#111] transition-colors"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Title */}
         <div className="text-center mb-16">
