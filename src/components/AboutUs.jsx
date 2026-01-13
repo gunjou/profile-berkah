@@ -1,9 +1,12 @@
 import React from "react";
 import { FiCheckCircle } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 import img1 from "../assets/img/scaffholding_berkah.jpg";
 import img2 from "../assets/img/k3/3.jpg";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+
   return (
     <section
       id="tentang"
@@ -12,7 +15,6 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Images */}
         <div className="relative w-full">
-          {/* Large image */}
           <div className="border-2 border-angsana-merah p-2 inline-block">
             <img
               src={img1}
@@ -21,7 +23,6 @@ const AboutUs = () => {
             />
           </div>
 
-          {/* Small image overlay */}
           <div className="absolute -bottom-10 left-14 w-64 border-2 border-angsana-merah p-2 bg-white dark:bg-[#1a1a1a]">
             <img src={img2} alt="Tim" className="w-full h-auto object-cover" />
           </div>
@@ -29,7 +30,6 @@ const AboutUs = () => {
 
         {/* Right Side - Content */}
         <div className="mt-16 lg:mt-0">
-          {/* Title */}
           <p className="text-angsana-merah text-sm uppercase tracking-widest font-semibold mb-2">
             TENTANG KAMI
           </p>
@@ -40,23 +40,19 @@ const AboutUs = () => {
 
           <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-xl">
             Berkah Angsana berkomitmen menghadirkan layanan konstruksi terbaik
-            dengan mengutamakan kualitas, efisiensi, dan keamanan. Kami
-            menangani proyek dengan berbagai tingkat kompleksitas dan senantiasa
-            menguasai teknologi terbaru untuk hasil yang lebih optimal.
+            dengan mengutamakan kualitas, efisiensi, dan keamanan.
           </p>
 
-          {/* Certification and Features */}
+          {/* Features */}
           <div className="space-y-4 text-gray-800 dark:text-gray-200">
             <div className="flex items-center gap-3">
               <FiCheckCircle className="text-angsana-merah text-xl" />
               <span>Insinyur Bersertifikat</span>
             </div>
-
             <div className="flex items-center gap-3">
               <FiCheckCircle className="text-angsana-merah text-xl" />
               <span>Tim Profesional dan Berpengalaman</span>
             </div>
-
             <div className="flex items-center gap-3">
               <FiCheckCircle className="text-angsana-merah text-xl" />
               <span>Hasil Pekerjaan Lebih Efektif & Terukur</span>
@@ -65,6 +61,7 @@ const AboutUs = () => {
 
           {/* CTA */}
           <button
+            onClick={() => navigate("/profil-perusahaan")}
             className="
               mt-10 bg-angsana-merah text-white px-8 py-4 rounded-md text-lg
               font-semibold hover:bg-red-700 transition flex items-center gap-2
@@ -81,7 +78,7 @@ const AboutUs = () => {
               className="w-14 h-14 rounded-full border-2 border-angsana-merah"
             />
             <div>
-              <h4 className="text-lg font-bold text-left text-teknika-hitam dark:text-white">
+              <h4 className="text-lg font-bold text-teknika-hitam dark:text-white">
                 Andi Firmansyah
               </h4>
               <p className="text-gray-600 dark:text-gray-400 text-sm">

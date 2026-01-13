@@ -13,7 +13,7 @@ const partners = [
            Kami bekerja sama sebagai partner resmi wilayah Lombok untuk penyediaan, instalasi, 
            dan maintenance valve industri.`,
     badge: "Partner Resmi • Region Lombok",
-    url: "#",
+    url: "https://www.arita.co.id/",
   },
   {
     name: "Hydromart Utama Indonesia",

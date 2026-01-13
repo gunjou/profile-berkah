@@ -1,7 +1,8 @@
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
+import { useProjectFilter } from "../context/ProjectFilterContext";
 
-// Dummy images (bisa ganti ke path Anda)
+// Dummy images
 import img1 from "../assets/img/maintenance_berkah.jpg";
 import img2 from "../assets/img/mep_berkah.jpg";
 import img3 from "../assets/img/welder_berkah.jpg";
@@ -12,25 +13,42 @@ const services = [
     title: "Maintenance & Service",
     desc: "Solusi perawatan dan perbaikan sipil, gedung, dan fasilitas operasional untuk memastikan keandalan infrastruktur.",
     img: img1,
+    category: "Maintenance",
   },
   {
     title: "MEP (Mechanical, Electrical & Plumbing)",
     desc: "Instalasi dan maintenance sistem mekanikal, elektrikal, panel, dan perpipaan sesuai standar industri.",
     img: img2,
+    category: "MEP",
   },
   {
     title: "Pabrikasi / Welding",
     desc: "Jasa pembuatan konstruksi metal, bracket, dudukan panel, serta perbaikan komponen mekanikal dengan kualitas tinggi.",
     img: img3,
+    category: "Welding",
   },
   {
     title: "Scaffolding",
     desc: "Sewa dan pemasangan scaffolding untuk berbagai kebutuhan konstruksi, perawatan, dan pekerjaan teknis.",
     img: img4,
+    category: "Scaffolding",
   },
 ];
 
 const ServicesSection = () => {
+  const { setActiveCategory } = useProjectFilter();
+
+  const goToProjects = (category) => {
+    setActiveCategory(category);
+
+    // scroll ke section proyek
+    setTimeout(() => {
+      document.getElementById("proyek")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 50);
+  };
+
   return (
     <section
       id="layanan"
@@ -66,7 +84,7 @@ const ServicesSection = () => {
                 flex flex-col
               "
             >
-              {/* Image Container — now on TOP */}
+              {/* Image */}
               <div className="relative h-48 overflow-hidden group">
                 <img
                   src={service.img}
@@ -76,18 +94,16 @@ const ServicesSection = () => {
                     group-hover:grayscale-0 transition-all duration-500
                   "
                 />
-
-                {/* Hover Overlay */}
                 <div
                   className="
                     absolute inset-0 bg-angsana-merah/0 
                     group-hover:bg-angsana-merah/20 
                     transition-all duration-500
                   "
-                ></div>
+                />
               </div>
 
-              {/* Text Content — now BELOW */}
+              {/* Content */}
               <div className="p-6 flex-1">
                 <h3 className="text-2xl font-bold text-teknika-hitam dark:text-white mb-3">
                   {service.title}
@@ -97,7 +113,11 @@ const ServicesSection = () => {
                   {service.desc}
                 </p>
 
-                <div className="flex items-center gap-2 mt-6 text-angsana-merah font-semibold cursor-pointer">
+                {/* View More */}
+                <div
+                  onClick={() => goToProjects(service.category)}
+                  className="flex items-center gap-2 mt-6 text-angsana-merah font-semibold cursor-pointer"
+                >
                   <span>View More</span>
                   <FiArrowUpRight />
                 </div>
@@ -108,18 +128,21 @@ const ServicesSection = () => {
 
         {/* CTA Button */}
         <div className="flex justify-center mt-16">
-          <button className="bg-angsana-merah text-white px-10 py-4 rounded-md font-semibold hover:bg-red-700 transition flex items-center gap-3">
+          <button
+            onClick={() => goToProjects("All")}
+            className="bg-angsana-merah text-white px-10 py-4 rounded-md font-semibold hover:bg-red-700 transition flex items-center gap-3"
+          >
             OUR SERVICES <FiArrowUpRight />
           </button>
         </div>
 
         {/* Link Under */}
-        <p className="text-center text-sm mt-6 text-gray-200">
+        {/* <p className="text-center text-sm mt-6 text-gray-200">
           Ingin melihat layanan terbaik kami?{" "}
           <span className="text-angsana-merah cursor-pointer hover:underline">
             Klik di sini untuk lihat lebih banyak
           </span>
-        </p>
+        </p> */}
       </div>
     </section>
   );

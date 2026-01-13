@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FiSquare, FiArrowUpRight } from "react-icons/fi";
+import { useProjectFilter } from "../context/ProjectFilterContext";
 
 // Dummy images (ganti sesuai kebutuhan)
 import img1 from "../assets/img/sipil/1.jpg";
@@ -137,10 +138,12 @@ const projects = [
 ];
 
 const ProjectsSection = () => {
-  const [active, setActive] = useState("All");
+  const { activeCategory, setActiveCategory } = useProjectFilter();
 
   const filteredProjects =
-    active === "All" ? projects : projects.filter((p) => p.category === active);
+    activeCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section
@@ -177,12 +180,12 @@ const ProjectsSection = () => {
           {categories.map((cat, index) => (
             <button
               key={index}
-              onClick={() => setActive(cat)}
+              onClick={() => setActiveCategory(cat)}
               className={`
                 px-6 py-2 rounded-sm border text-sm font-bold tracking-wide
                 transition-all
                 ${
-                  active === cat
+                  activeCategory === cat
                     ? "bg-angsana-merah text-white border-angsana-merah"
                     : "border-gray-600 dark:border-gray-500 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                 }
