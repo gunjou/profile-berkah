@@ -1,5 +1,6 @@
 import React from "react";
 import { FiMail, FiPhone, FiMapPin, FiLinkedin } from "react-icons/fi";
+import { MdLocationPin } from "react-icons/md";
 
 // Ganti dengan path logo proyek Anda
 import Logo from "../assets/img/logo_white.png";
@@ -32,7 +33,7 @@ const Footer = () => {
         </div>
 
         {/* USEFUL LINKS */}
-        <div>
+        {/* <div>
           <h3 className="text-lg font-bold mb-4">Menu Cepat</h3>
           <ul className="space-y-2 text-gray-300 text-sm">
             <li className="hover:text-white cursor-pointer">Tentang Kami</li>
@@ -41,18 +42,11 @@ const Footer = () => {
             <li className="hover:text-white cursor-pointer">Partner</li>
             <li className="hover:text-white cursor-pointer">Hubungi Kami</li>
           </ul>
-        </div>
+        </div> */}
 
-        {/* OFFICE INFO */}
+        {/* KONTAK */}
         <div>
-          <h3 className="text-lg font-bold mb-4">Alamat Kantor</h3>
-          <p className="text-sm text-gray-300 flex items-start gap-2">
-            <FiMapPin className="mt-1" />
-            Ruko Bukit Citra Kencana No.6, Jl. Pengsong Raya, Desa Perampuan,
-            Labuapi, Lombok Barat, NTB. 83361
-          </p>
-
-          <h3 className="text-lg font-bold mt-6 mb-2">Kontak</h3>
+          <h3 className="text-lg font-bold mb-4">KONTAK</h3>
           <p className="text-sm text-gray-300 flex items-center gap-2">
             <FiPhone /> 0370 785 3692
           </p>
@@ -61,23 +55,36 @@ const Footer = () => {
           </p>
         </div>
 
+        {/* OFFICE INFO */}
+        <div>
+          <h3 className="text-lg font-bold mb-4">Alamat Kantor</h3>
+          <p className="text-sm text-gray-300 flex items-start gap-2 text-left">
+            <MdLocationPin className="text-xl" />
+            Perumahan bukit citra kencana, <br /> Block B no. 35, Jl. Pengsong
+            Raya, Desa Perampuan, Labuapi, <br />
+            Lombok Barat, NTB. 83361
+          </p>
+        </div>
+
         {/* SOCIAL */}
         <div>
           <h3 className="text-lg font-bold mb-4">Ikuti Kami</h3>
 
-          <a
-            href="https://id.linkedin.com/company/berkah-angsana"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              w-10 h-10 flex items-center justify-center 
-              bg-white/10 hover:bg-white/20 
-              rounded-md border border-white/20 
-              transition
+          <div className="flex justify-center">
+            <a
+              href="https://id.linkedin.com/company/berkah-angsana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+            w-10 h-10 flex items-center justify-center 
+            bg-white/10 hover:bg-white/20 
+            rounded-md border border-white/20 
+            transition
             "
-          >
-            <FiLinkedin className="text-xl" />
-          </a>
+            >
+              <FiLinkedin className="text-xl" />
+            </a>
+          </div>
         </div>
       </div>
 

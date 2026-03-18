@@ -71,7 +71,7 @@ const AboutUs = () => {
           </button>
 
           {/* Signature */}
-          <div className="flex items-center gap-4 mt-10">
+          {/* <div className="flex items-center gap-4 mt-10">
             <img
               src="https://i.pravatar.cc/60?img=12"
               alt="Founder"
@@ -85,7 +85,7 @@ const AboutUs = () => {
                 Direktur Utama Berkah Angsana
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
