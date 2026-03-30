@@ -2,8 +2,7 @@ import React from "react";
 import { FiMail, FiPhone, FiMapPin, FiLinkedin } from "react-icons/fi";
 import { MdLocationPin } from "react-icons/md";
 
-// Ganti dengan path logo proyek Anda
-import Logo from "../assets/img/logo_white.png";
+import logoWhite from "../assets/berkahangsana_white.png";
 
 const Footer = () => {
   return (
@@ -20,7 +19,7 @@ const Footer = () => {
         {/* COMPANY INFO */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={Logo} alt="Logo" className="w-12 h-12" />
+            <img src={logoWhite} alt="Logo" className="w-12 h-12" />
             <h2 className="text-xl font-bold">PT. Berkah Angsana Teknika</h2>
           </div>
 

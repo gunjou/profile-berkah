@@ -18,8 +18,8 @@ const Home = () => {
         <AboutUs />
         <ClientsCarousel />
         <ServicesSection />
-        <ProjectsSection />
         <PartnersSection />
+        <ProjectsSection />
       </div>
     </ProjectFilterProvider>
   );

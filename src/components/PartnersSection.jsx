@@ -1,14 +1,10 @@
 import React from "react";
 import { FiCheckCircle, FiArrowUpRight } from "react-icons/fi";
 
-// Logos
-import aritaLogo from "../assets/img/logo_arita.png";
-import hydromartLogo from "../assets/img/hydromart-logo.png";
-
 const partners = [
   {
     name: "Arita Indonesia",
-    logo: aritaLogo,
+    logo: "/images/logo_arita.png",
     desc: `Arita merupakan salah satu produsen valve dan fitting industri terbesar di Indonesia. 
            Kami bekerja sama sebagai partner resmi wilayah Lombok untuk penyediaan, instalasi, 
            dan maintenance valve industri.`,
@@ -17,7 +13,7 @@ const partners = [
   },
   {
     name: "Hydromart Utama Indonesia",
-    logo: hydromartLogo,
+    logo: "/images/hydromart-logo.png",
     desc: `Hydromart adalah penyedia solusi water treatment dan equipment pendukung instalasi air 
            untuk sektor industri & fasilitas. Mendukung kebutuhan plumbing, RO, dan instalasi teknikal.`,
     badge: "Partner Resmi • Hydromart",
@@ -27,60 +23,64 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section className="w-full py-16 bg-white dark:bg-[#111] transition-colors">
+    <section className="w-full py-20 bg-gray-50 dark:bg-[#0f0f0f] transition-colors">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Subtitle */}
-        <p className="text-angsana-merah text-sm font-semibold tracking-wider uppercase">
-          Partner Kami
+        <p className="text-angsana-merah text-sm font-bold tracking-[0.2em] uppercase mb-3">
+          Partner Strategis
         </p>
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-extrabold text-teknika-hitam dark:text-white mt-2">
-          Partner & Rekan Kerja Sama
+        <h2 className="text-3xl md:text-5xl font-extrabold text-teknika-hitam dark:text-white leading-tight">
+          Sinergi Bersama Mitra Industri
         </h2>
 
+        {/* Divider */}
+        <div className="w-20 h-1 bg-angsana-merah mx-auto mt-6 rounded-full"></div>
+
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 mt-3 max-w-2xl mx-auto text-sm">
-          Bekerja sama dengan partner terpercaya untuk mendukung layanan
-          konstruksi, teknikal, dan kebutuhan industri.
+        <p className="text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto text-base leading-relaxed">
+          Kami berkolaborasi dengan produsen dan penyedia solusi teknikal
+          terkemuka untuk memastikan setiap proyek didukung oleh material dan
+          teknologi terbaik.
         </p>
 
         {/* Partner Cards */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
           {partners.map((p, idx) => (
             <div
               key={idx}
               className="
-                bg-[#f7f7f7] dark:bg-[#1b1b1b]
-                rounded-xl shadow-md p-8
-                flex flex-col items-center text-center
-                hover:shadow-lg hover:-translate-y-1
-                transition-all
+                bg-white dark:bg-[#1a1a1a]
+                rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800
+                p-10 flex flex-col items-center text-center
+                hover:shadow-xl hover:-translate-y-2
+                transition-all duration-500 group
               "
             >
-              {/* Logo */}
-              <div className="w-28 h-28 bg-white rounded-lg flex items-center justify-center shadow-sm">
+              {/* Logo Container */}
+              <div className="w-32 h-32 bg-gray-50 dark:bg-[#222] rounded-2xl flex items-center justify-center p-6 mb-6 transition-colors">
                 <img
                   src={p.logo}
                   alt={`${p.name} Logo`}
-                  className="w-20 h-auto object-contain"
+                  className="max-w-full max-h-full object-contain transition-all duration-500"
                 />
               </div>
 
               {/* Text Info */}
-              <h3 className="text-xl font-bold text-teknika-hitam dark:text-white mt-5">
+              <h3 className="text-2xl font-bold text-teknika-hitam dark:text-white">
                 {p.name}
               </h3>
 
-              <p className="text-gray-700 dark:text-gray-300 text-sm mt-3 leading-relaxed max-w-sm">
-                {p.desc}
-              </p>
-
               {/* Badge */}
-              <div className="flex items-center gap-2 mt-4 text-angsana-merah font-medium text-sm">
-                <FiCheckCircle className="text-lg" />
+              <div className="inline-flex items-center gap-2 mt-4 px-4 py-1.5 bg-red-50 dark:bg-red-950/30 text-angsana-merah rounded-full font-bold text-[10px] tracking-wider uppercase">
+                <FiCheckCircle />
                 <span>{p.badge}</span>
               </div>
+
+              <p className="text-gray-600 dark:text-gray-400 text-sm mt-6 leading-relaxed max-w-sm">
+                {p.desc}
+              </p>
 
               {/* Button */}
               <a
@@ -88,12 +88,12 @@ const PartnersSection = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="
-                  mt-5 inline-flex items-center gap-2 text-white text-sm
-                  bg-angsana-merah hover:bg-red-700
-                  px-5 py-2.5 rounded-md transition
+                  mt-8 inline-flex items-center gap-2 text-white text-xs font-bold tracking-widest
+                  bg-angsana-merah hover:bg-red-700 uppercase
+                  px-8 py-3.5 rounded-sm transition-all shadow-lg hover:shadow-red-500/30
                 "
               >
-                Kunjungi Partner <FiArrowUpRight />
+                Kunjungi Situs <FiArrowUpRight size={16} />
               </a>
             </div>
           ))}

@@ -1,11 +1,17 @@
 import React from "react";
 import { FiCheckCircle } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import img1 from "../assets/img/scaffholding_berkah.jpg";
-import img2 from "../assets/img/k3/3.jpg";
+
+// ❌ HAPUS IMPORT INI (Karena file ada di folder public/images)
+// import img1 from "/image/scaffholding_berkah.jpg";
+// import img2 from "/image/k3/3.jpg";
 
 const AboutUs = () => {
   const navigate = useNavigate();
+
+  // ✅ Definisikan path gambar sebagai string
+  const imgConstruction = "/images/scaffholding_berkah.jpg";
+  const imgTeam = "/images/k3/3.jpg";
 
   return (
     <section
@@ -15,77 +21,71 @@ const AboutUs = () => {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Images */}
         <div className="relative w-full">
-          <div className="border-2 border-angsana-merah p-2 inline-block">
+          {/* Main Image */}
+          <div className="border-2 border-angsana-merah p-2 inline-block shadow-xl">
             <img
-              src={img1}
-              alt="Konstruksi"
-              className="w-full h-auto object-cover"
+              src={imgConstruction}
+              alt="Konstruksi Berkah Angsana"
+              className="w-full h-auto object-cover max-h-[500px]"
             />
           </div>
 
-          <div className="absolute -bottom-10 left-14 w-64 border-2 border-angsana-merah p-2 bg-white dark:bg-[#1a1a1a]">
-            <img src={img2} alt="Tim" className="w-full h-auto object-cover" />
+          {/* Floating Secondary Image */}
+          <div className="absolute -bottom-10 right-4 lg:left-14 w-64 border-2 border-angsana-merah p-2 bg-white dark:bg-[#1a1a1a] shadow-2xl hidden md:block">
+            <img
+              src={imgTeam}
+              alt="Tim K3 Berkah Angsana"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
 
         {/* Right Side - Content */}
         <div className="mt-16 lg:mt-0">
-          <p className="text-angsana-merah text-sm uppercase tracking-widest font-semibold mb-2">
+          <p className="text-angsana-merah text-sm uppercase tracking-widest font-bold mb-3">
             TENTANG KAMI
           </p>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-teknika-hitam dark:text-white leading-tight mb-6">
-            Kami memiliki visi untuk masa depan konstruksi yang lebih baik.
+            Membangun Masa Depan Konstruksi yang Lebih Kokoh.
           </h2>
 
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-xl">
-            Berkah Angsana berkomitmen menghadirkan layanan konstruksi terbaik
-            dengan mengutamakan kualitas, efisiensi, dan keamanan.
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 max-w-xl text-lg">
+            PT Berkah Angsana berkomitmen menghadirkan solusi teknikal dan
+            konstruksi terintegrasi dengan standar kualitas tinggi, mengutamakan
+            ketepatan waktu serta aspek keamanan kerja yang ketat.
           </p>
 
-          {/* Features */}
-          <div className="space-y-4 text-gray-800 dark:text-gray-200">
-            <div className="flex items-center gap-3">
-              <FiCheckCircle className="text-angsana-merah text-xl" />
-              <span>Insinyur Bersertifikat</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <FiCheckCircle className="text-angsana-merah text-xl" />
-              <span>Tim Profesional dan Berpengalaman</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <FiCheckCircle className="text-angsana-merah text-xl" />
-              <span>Hasil Pekerjaan Lebih Efektif & Terukur</span>
-            </div>
+          {/* Features List */}
+          <div className="space-y-5">
+            {[
+              "Insinyur & Teknisi Bersertifikat BNSP",
+              "Manajemen Proyek Profesional & Transparan",
+              "Implementasi K3 (Safety) Sesuai Standar Global",
+              "Hasil Pekerjaan Efektif, Terukur & Bergaransi",
+            ].map((feature, index) => (
+              <div key={index} className="flex items-center gap-4 group">
+                <div className="flex-shrink-0">
+                  <FiCheckCircle className="text-angsana-merah text-2xl group-hover:scale-110 transition-transform" />
+                </div>
+                <span className="text-gray-800 dark:text-gray-200 font-medium">
+                  {feature}
+                </span>
+              </div>
+            ))}
           </div>
 
-          {/* CTA */}
+          {/* CTA Button */}
           <button
             onClick={() => navigate("/profil-perusahaan")}
             className="
-              mt-10 bg-angsana-merah text-white px-8 py-4 rounded-md text-lg
-              font-semibold hover:bg-red-700 transition flex items-center gap-2
+              mt-12 bg-angsana-merah text-white px-10 py-4 rounded-sm text-sm
+              font-bold hover:bg-red-700 transition-all shadow-lg hover:shadow-red-500/20
+              flex items-center gap-3 tracking-widest
             "
           >
-            PELAJARI LEBIH LANJUT →
+            PELAJARI PROFIL PERUSAHAAN <span>→</span>
           </button>
-
-          {/* Signature */}
-          {/* <div className="flex items-center gap-4 mt-10">
-            <img
-              src="https://i.pravatar.cc/60?img=12"
-              alt="Founder"
-              className="w-14 h-14 rounded-full border-2 border-angsana-merah"
-            />
-            <div>
-              <h4 className="text-lg font-bold text-teknika-hitam dark:text-white">
-                Andi Firmansyah
-              </h4>
-              <p className="text-gray-600 dark:text-gray-400 text-sm">
-                Direktur Utama Berkah Angsana
-              </p>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>

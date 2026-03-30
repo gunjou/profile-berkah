@@ -8,8 +8,8 @@ import {
   FiSun,
 } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
-import LogoLight from "../assets/img/logo_large.png";
-import LogoDark from "../assets/img/logo_white.png";
+import logo from "../assets/berkahangsana.png";
+import logoWhite from "../assets/berkahangsana_white.png";
 
 const Header = () => {
   const [openMobile, setOpenMobile] = useState(false);
@@ -97,7 +97,7 @@ const Header = () => {
           className="flex items-center gap-3 cursor-pointer select-none"
         >
           <img
-            src={isDark ? LogoDark : LogoLight}
+            src={isDark ? logoWhite : logo}
             alt="Logo"
             className="w-10 h-10 object-contain"
           />
@@ -150,19 +150,19 @@ const Header = () => {
         </nav>
 
         {/* Desktop Actions */}
+        <button
+          onClick={toggleDarkMode}
+          className="text-2xl text-black dark:text-white"
+        >
+          {isDark ? <FiSun /> : <FiMoon />}
+        </button>
+
         <div className="hidden lg:flex items-center gap-6">
           <button className="bg-red-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-red-700 transition">
             Hubungi Kami →
           </button>
 
-          <button
-            onClick={toggleDarkMode}
-            className="text-2xl text-black dark:text-white"
-          >
-            {isDark ? <FiSun /> : <FiMoon />}
-          </button>
-
-          <FiGrid className="text-2xl text-black dark:text-white cursor-pointer" />
+          {/* <FiGrid className="text-2xl text-black dark:text-white cursor-pointer" /> */}
         </div>
 
         {/* Mobile Toggle */}

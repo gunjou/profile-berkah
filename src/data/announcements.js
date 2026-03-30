@@ -1,12 +1,11 @@
-import img from "../assets/img/maintenance_berkah.jpg";
-
 const announcements = [
   {
     id: 1,
     title: "Pengumuman Libur Nasional & Penyesuaian Jam Operasional",
     slug: "libur-nasional-penyesuaian-jam-operasional",
     date: "15 Januari 2026",
-    image: img,
+    // ✅ Gunakan path string langsung ke folder public/images
+    image: "/images/maintenance_berkah.jpg",
     important: true,
     content: `
 Sehubungan dengan adanya hari libur nasional, kami informasikan bahwa
@@ -21,6 +20,7 @@ Terima kasih atas perhatian dan kerja samanya.
     title: "Rekrutmen Tenaga Proyek Baru",
     slug: "rekrutmen-tenaga-proyek-baru",
     date: "10 Januari 2026",
+    image: "/images/maintenance_berkah.jpg", // Menggunakan image yang sama atau ganti sesuai file di public
     important: false,
     content: `
 Kami membuka kesempatan bagi tenaga profesional untuk bergabung

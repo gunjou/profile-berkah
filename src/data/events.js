@@ -1,5 +1,3 @@
-import img from "../assets/img/maintenance_berkah.jpg";
-
 const events = [
   {
     id: 1,
@@ -7,7 +5,7 @@ const events = [
     slug: "ground-breaking-proyek-gedung-perkantoran",
     date: "20 Februari 2026",
     location: "Makassar",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     excerpt:
       "Acara peletakan batu pertama sebagai tanda dimulainya proyek gedung perkantoran baru.",
     content: `
@@ -26,7 +24,7 @@ bagi perkembangan bisnis dan perekonomian daerah.
     slug: "sosialisasi-keselamatan-kerja-k3-proyek-konstruksi",
     date: "5 Maret 2026",
     location: "Gowa",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     excerpt:
       "Kegiatan sosialisasi K3 untuk meningkatkan kesadaran dan budaya keselamatan kerja.",
     content: `
@@ -44,7 +42,7 @@ setiap pekerjaan dilakukan sesuai dengan standar keselamatan yang berlaku.
     slug: "serah-terima-proyek-renovasi-gedung-operasional",
     date: "18 April 2026",
     location: "Maros",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     excerpt:
       "Seremoni serah terima proyek renovasi gedung operasional kepada klien.",
     content: `
@@ -62,7 +60,7 @@ serta keselamatan kerja selama proses pelaksanaan.
     slug: "pelatihan-internal-manajemen-proyek",
     date: "10 Mei 2026",
     location: "Makassar",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     excerpt:
       "Pelatihan internal untuk meningkatkan kompetensi tim dalam pengelolaan proyek.",
     content: `
@@ -80,7 +78,7 @@ serta pengendalian proyek agar hasil pekerjaan semakin optimal.
     slug: "kegiatan-csr-renovasi-fasilitas-umum",
     date: "2 Juni 2026",
     location: "Takalar",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     excerpt:
       "Program tanggung jawab sosial perusahaan melalui renovasi fasilitas umum.",
     content: `

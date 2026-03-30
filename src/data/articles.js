@@ -1,6 +1,3 @@
-import React from "react";
-import img from "../assets/img/maintenance_berkah.jpg";
-
 const articles = [
   {
     id: 1,
@@ -8,7 +5,7 @@ const articles = [
     slug: "pentingnya-keselamatan-kerja-di-proyek-konstruksi",
     date: "12 Januari 2026",
     author: "Admin Berkah Angsana",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     content: `
 Keselamatan kerja merupakan aspek yang sangat penting dalam setiap proyek konstruksi.
 Lingkungan kerja yang aman tidak hanya melindungi tenaga kerja, tetapi juga meningkatkan
@@ -51,7 +48,7 @@ panjang bagi keberlangsungan proyek dan reputasi perusahaan konstruksi.
     slug: "tips-memilih-kontraktor-profesional",
     date: "8 Januari 2026",
     author: "Admin Berkah Angsana",
-    image: img,
+    image: "/images/maintenance_berkah.jpg",
     content: `
 Memilih kontraktor profesional merupakan langkah awal yang sangat menentukan
 keberhasilan sebuah proyek konstruksi.

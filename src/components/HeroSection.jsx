@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
-import bgHero from "../assets/img/maintenance_berkah.jpg";
 
 const taglines = [
   "Membangun Masa Depan dengan Kualitas Terbaik.",
   "Solusi Konstruksi Andal untuk Berbagai Proyek.",
-  "Komitmen pada Keamanan, dan Ketepatan.",
+  "Komitmen pada Keamanan dan Ketepatan.",
 ];
 
 const HeroSection = () => {
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
+
+  const bgHero = "/images/hero_bg.jpg";
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,38 +28,59 @@ const HeroSection = () => {
   return (
     <section
       id="beranda"
-      className="relative w-full h-screen flex items-center"
+      className="relative w-full h-screen flex items-center overflow-hidden"
       style={{
         backgroundImage: `url(${bgHero})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay gelap agar teks lebih terlihat */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      {/* Overlay gelap agar teks lebih kontras */}
+      <div className="absolute inset-0 bg-black/50 lg:bg-gradient-to-r lg:from-black/80 lg:to-transparent"></div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 text-left">
-        {/* Kategori kecil */}
-        <p className="text-angsana-merah uppercase tracking-widest text-sm font-semibold mb-4">
-          BERKAH ANGSANA CONSTRUCTION
-        </p>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-left">
+        {/* Kategori kecil dengan aksen garis */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-10 h-[2px] bg-angsana-merah"></div>
+          <p className="text-angsana-merah uppercase tracking-[0.2em] text-xs md:text-sm font-bold">
+            PT BERKAH ANGSANA CONSTRUCTION
+          </p>
+        </div>
 
-        {/* Tagline berubah */}
-        <h1
-          className={`
-            text-white text-5xl md:text-6xl font-extrabold max-w-3xl leading-tight
-            transition-all duration-700 ease-out
-            ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}
-          `}
-        >
-          {taglines[index]}
-        </h1>
+        {/* Tagline dengan animasi Fade & Slide */}
+        <div className="min-h-[160px] md:min-h-[200px]">
+          <h1
+            className={`
+              text-white text-4xl md:text-6xl lg:text-7xl font-extrabold max-w-4xl leading-[1.1]
+              transition-all duration-700 ease-in-out
+              ${fade ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4"}
+            `}
+          >
+            {taglines[index]}
+          </h1>
+        </div>
 
-        {/* Tombol Get in Touch */}
-        <button className="mt-8 bg-angsana-merah text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-red-700 transition flex items-center gap-2">
-          GET IN TOUCH →
-        </button>
+        {/* Action Buttons */}
+        <div className="mt-10 flex flex-wrap gap-4">
+          <button className="bg-angsana-merah text-white px-8 py-4 rounded-sm text-sm font-bold hover:bg-red-700 transition-all shadow-lg hover:shadow-red-500/40 flex items-center gap-3 tracking-widest">
+            GET IN TOUCH <span>→</span>
+          </button>
+
+          <button className="border border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-sm text-sm font-bold hover:bg-white hover:text-black transition-all tracking-widest">
+            OUR PROJECTS
+          </button>
+        </div>
+      </div>
+
+      {/* Indikator Slide (Opsional untuk mempercantik) */}
+      <div className="absolute bottom-10 left-6 flex gap-2">
+        {taglines.map((_, i) => (
+          <div
+            key={i}
+            className={`h-1 transition-all duration-500 ${i === index ? "w-8 bg-angsana-merah" : "w-4 bg-white/30"}`}
+          />
+        ))}
       </div>
     </section>
   );
