@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
-import {
-  FiChevronDown,
-  FiGrid,
-  FiMenu,
-  FiX,
-  FiMoon,
-  FiSun,
-} from "react-icons/fi";
+import { FiChevronDown, FiMenu, FiX, FiMoon, FiSun } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/berkahangsana.png";
 import logoWhite from "../assets/berkahangsana_white.png";
+import { useProjectFilter } from "../context/ProjectFilterContext";
 
 const Header = () => {
   const [openMobile, setOpenMobile] = useState(false);
@@ -17,6 +11,7 @@ const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const { setActiveCategory } = useProjectFilter();
 
   // Load dark mode
   useEffect(() => {
@@ -33,27 +28,32 @@ const Header = () => {
   };
 
   const menuItems = [
-    { label: "Beranda", target: "beranda" },
     { label: "Tentang", target: "tentang" },
+    // { label: "Klien", target: "clients" },
     { label: "Layanan", target: "layanan" },
-    { label: "Proyek", target: "proyek" },
+    { label: "Pengalaman", target: "timeline" },
+    {
+      label: "Proyek",
+      target: "proyek", // Klik label utama Proyek akan scroll ke section
+      dropdown: [
+        { label: "Semua Proyek", category: "SEMUA" },
+        { label: "Maintenance", category: "Maintenance" },
+        { label: "MEP", category: "MEP" },
+        { label: "Scaffolding", category: "Scaffolding" },
+        { label: "Pabrikasi", category: "Pabrikasi" },
+      ],
+    },
+    { label: "Partner", target: "partner" },
     {
       label: "Halaman",
       dropdown: [
-        { label: "Profil Perusahaan", path: "/profil-perusahaan" },
-        { label: "Struktur Organisasi", path: "/struktur-organisasi" },
+        // { label: "Profil Perusahaan", path: "/profil-perusahaan" },
+        // { label: "Struktur Organisasi", path: "/struktur-organisasi" },
         { label: "FAQ", path: "/faq" },
       ],
     },
-    {
-      label: "Berita",
-      dropdown: [
-        { label: "Artikel", path: "/artikel" },
-        { label: "Pengumuman", path: "/pengumuman" },
-        { label: "Event", path: "/event" },
-      ],
-    },
-    { label: "Kontak", target: "footer" },
+    // { label: "Karir", path: "/karir" },
+    { label: "Kontak", path: "/kontak" },
   ];
 
   const scrollToSection = (id) => {
@@ -67,6 +67,19 @@ const Header = () => {
   };
 
   const handleMenuClick = (item) => {
+    // Aksi untuk filter kategori proyek
+    if (item.category) {
+      setActiveCategory(item.category);
+      if (location.pathname !== "/") {
+        navigate("/");
+        setTimeout(() => scrollToSection("proyek"), 300);
+      } else {
+        scrollToSection("proyek");
+      }
+      setOpenMobile(false);
+      return;
+    }
+
     // Route navigation
     if (item.path) {
       navigate(item.path);
@@ -132,7 +145,10 @@ const Header = () => {
                   {item.dropdown.map((sub, idx) => (
                     <div
                       key={idx}
-                      onClick={() => handleMenuClick(sub)}
+                      onClick={(e) => {
+                        e.stopPropagation(); // Mencegah klik ganda
+                        handleMenuClick(sub);
+                      }}
                       className="
                         px-3 py-2 rounded-lg cursor-pointer
                         text-gray-700 dark:text-gray-300
@@ -150,19 +166,20 @@ const Header = () => {
         </nav>
 
         {/* Desktop Actions */}
-        <button
-          onClick={toggleDarkMode}
-          className="text-2xl text-black dark:text-white"
-        >
-          {isDark ? <FiSun /> : <FiMoon />}
-        </button>
-
         <div className="hidden lg:flex items-center gap-6">
-          <button className="bg-red-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-red-700 transition">
-            Hubungi Kami →
+          <button
+            onClick={toggleDarkMode}
+            className="text-2xl text-black dark:text-white"
+          >
+            {isDark ? <FiSun /> : <FiMoon />}
           </button>
 
-          {/* <FiGrid className="text-2xl text-black dark:text-white cursor-pointer" /> */}
+          <button
+            onClick={() => navigate("/kontak")}
+            className="bg-red-600 text-white font-semibold px-6 py-3 rounded-md hover:bg-red-700 transition"
+          >
+            Hubungi Kami →
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -176,7 +193,15 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {openMobile && (
-        <div className="lg:hidden bg-white dark:bg-[#1a1a1a] px-6 py-4 flex flex-col gap-4 shadow-md">
+        <div className="lg:hidden bg-white dark:bg-[#1a1a1a] px-6 py-4 flex flex-col gap-4 shadow-md overflow-y-auto max-h-screen">
+          <div className="flex justify-end p-2">
+            <button
+              onClick={toggleDarkMode}
+              className="text-2xl text-black dark:text-white"
+            >
+              {isDark ? <FiSun /> : <FiMoon />}
+            </button>
+          </div>
           {menuItems.map((item, i) => (
             <div key={i}>
               <div
@@ -192,7 +217,7 @@ const Header = () => {
                     <span
                       key={idx}
                       onClick={() => handleMenuClick(sub)}
-                      className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer"
+                      className="text-sm text-gray-600 dark:text-gray-400 cursor-pointer py-1"
                     >
                       {sub.label}
                     </span>
@@ -202,7 +227,13 @@ const Header = () => {
             </div>
           ))}
 
-          <button className="mt-4 bg-red-600 text-white font-semibold px-6 py-3 rounded-md">
+          <button
+            onClick={() => {
+              navigate("/kontak");
+              setOpenMobile(false);
+            }}
+            className="mt-4 bg-red-600 text-white font-semibold px-6 py-3 rounded-md"
+          >
             Hubungi Kami →
           </button>
         </div>

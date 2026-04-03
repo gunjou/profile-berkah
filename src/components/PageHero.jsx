@@ -4,10 +4,9 @@ const PageHero = ({ label, title, description }) => {
   return (
     <section
       className="
-        pt-32 pb-24
-        bg-gradient-to-br
-        from-red-600 via-red-700 to-red-800
-        dark:from-[#7f1d1d] dark:via-[#991b1b] dark:to-[#450a0a]
+        pt-32 pb-12
+        bg-gradient-to-r from-black via-[#0c0003] to-[#60000d]
+        dark:from-black dark:via-[#0c0003] dark:to-[#60000d]
         text-white
         relative overflow-hidden
       "

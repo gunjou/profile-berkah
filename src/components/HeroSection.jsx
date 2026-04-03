@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const taglines = [
   "Solusi Maintenance & Teknik untuk Industri.",
@@ -7,6 +8,7 @@ const taglines = [
 ];
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -67,7 +69,10 @@ const HeroSection = () => {
 
         {/* Action Buttons */}
         <div className="mt-10 flex flex-wrap gap-4">
-          <button className="bg-angsana-merah text-white px-8 py-4 rounded-sm text-sm font-bold hover:bg-red-700 transition-all shadow-lg hover:shadow-red-500/40 flex items-center gap-3 tracking-widest">
+          <button
+            onClick={() => navigate("/kontak")}
+            className="bg-angsana-merah text-white px-8 py-4 rounded-sm text-sm font-bold hover:bg-red-700 transition-all shadow-lg hover:shadow-red-500/40 flex items-center gap-3 tracking-widest"
+          >
             HUBUNGI KAMI <span>→</span>
           </button>
 

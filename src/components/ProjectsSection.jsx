@@ -1,93 +1,35 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { FiSquare, FiChevronRight, FiChevronLeft } from "react-icons/fi";
 import { useProjectFilter } from "../context/ProjectFilterContext";
+import { projects } from "../data/projects";
 
-const categories = ["All", "Maintenance", "MEP", "Scaffolding", "Pabrikasi"];
-
-const projects = [
-  {
-    title: "Pemeliharaan Rutin Fasilitas",
-    desc: "Layanan maintenance berkala untuk menjaga efisiensi operasional industri.",
-    category: "Maintenance",
-    img: "/images/maintenance/1.jpg",
-  },
-  {
-    title: "Instalasi Sistem MEP",
-    desc: "Pengerjaan Mechanical, Electrical, dan Plumbing pada gedung komersial.",
-    category: "MEP",
-    img: "/images/mep/1.jpg",
-  },
-  {
-    title: "Pabrikasi Struktur Baja",
-    desc: "Proses workshop untuk pembuatan komponen konstruksi baja berkualitas.",
-    category: "Pabrikasi",
-    img: "/images/pabrikasi/1.jpg",
-  },
-  {
-    title: "Pemasangan Scaffolding Ringlock",
-    desc: "Solusi perancah aman untuk pengerjaan konstruksi di ketinggian.",
-    category: "Scaffolding",
-    img: "/images/scaffolding/1.jpg",
-  },
-  {
-    title: "Sistem Kelistrikan Industri",
-    desc: "Instalasi dan pengujian panel listrik tegangan menengah.",
-    category: "MEP",
-    img: "/images/mep/2.jpg",
-  },
-  {
-    title: "Maintenance Gardu Hubung",
-    desc: "Pengecekan teknis pada komponen gardu listrik industri.",
-    category: "Maintenance",
-    img: "/images/maintenance/2.jpg",
-  },
-  {
-    title: "Ereksi Scaffolding Proyek",
-    desc: "Layanan bongkar pasang scaffolding profesional.",
-    category: "Scaffolding",
-    img: "/images/scaffolding/2.jpg",
-  },
-  {
-    title: "Pengelasan Konstruksi",
-    desc: "Jasa pabrikasi pengelasan bersertifikat untuk industri.",
-    category: "Pabrikasi",
-    img: "/images/pabrikasi/2.jpg",
-  },
-  {
-    title: "Integrasi Plumbing Gedung",
-    desc: "Perancangan dan instalasi sistem perpipaan modern.",
-    category: "MEP",
-    img: "/images/mep/3.jpg",
-  },
-];
+const categories = ["SEMUA", "Maintenance", "MEP", "Scaffolding", "Pabrikasi"];
 
 const ProjectsSection = () => {
   const { activeCategory, setActiveCategory } = useProjectFilter();
-
-  // State untuk Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 6;
 
-  // Filter projects berdasarkan kategori
-  const filteredProjects = useMemo(() => {
-    const filtered =
-      activeCategory === "All"
-        ? projects
-        : projects.filter((p) => p.category === activeCategory);
+  const [displayProjects, setDisplayProjects] = useState([]);
 
-    // Reset ke halaman 1 setiap kali kategori berubah
+  useEffect(() => {
+    let filtered = [];
+    if (activeCategory === "SEMUA" || activeCategory === "All") {
+      filtered = [...projects].sort(() => Math.random() - 0.5);
+    } else {
+      filtered = projects.filter((p) => p.category === activeCategory);
+    }
+    setDisplayProjects(filtered);
     setCurrentPage(1);
-    return filtered;
   }, [activeCategory]);
 
-  // Logika hitung pagination
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
-  const currentProjects = filteredProjects.slice(
+  const currentProjects = displayProjects.slice(
     indexOfFirstProject,
     indexOfLastProject,
   );
-  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  const totalPages = Math.ceil(displayProjects.length / projectsPerPage);
 
   return (
     <section
@@ -95,7 +37,7 @@ const ProjectsSection = () => {
       className="w-full py-12 bg-white dark:bg-[#111] transition-colors"
     >
       <div className="max-w-7xl mx-auto px-6">
-        {/* Title Section */}
+        {/* Header Section */}
         <div className="text-center mb-16">
           <p className="text-angsana-merah text-sm font-semibold tracking-wider uppercase">
             Proyek Kami
@@ -129,31 +71,35 @@ const ProjectsSection = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[600px]">
+        {/* Menggunakan grid-rows-none dan items-start agar kontainer tidak memaksa tinggi jika item sedikit */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
           {currentProjects.map((project, idx) => (
             <div
               key={idx}
-              className="relative overflow-hidden rounded-xl group bg-gray-50 dark:bg-[#1a1a1a]"
+              className="relative overflow-hidden rounded-xl group bg-gray-50 dark:bg-[#1a1a1a] isolate"
             >
-              <div className="aspect-w-16 aspect-h-12 overflow-hidden">
+              {/* Gambar dengan Rasio Aspek Tetap (4:3) */}
+              {/* Ini memastikan gambar tidak memanjang meskipun hanya ada 3 proyek */}
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-              </div>
 
-              {/* Overlay Content */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
-                <p className="text-angsana-merah text-xs font-bold mb-1">
-                  {project.category}
-                </p>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 text-sm line-clamp-2">
-                  {project.desc}
-                </p>
+                {/* Overlay Content - Sekarang berada DI DALAM aspek gambar */}
+                {/* Tanpa padding bawah tambahan, menyatu sempurna dengan round corner */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                  <p className="text-angsana-merah text-[10px] font-bold mb-1 uppercase tracking-widest">
+                    {project.category}
+                  </p>
+                  <h3 className="text-lg font-bold text-white mb-2 leading-tight">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 text-xs line-clamp-3 italic leading-relaxed">
+                    "{project.desc}"
+                  </p>
+                </div>
               </div>
             </div>
           ))}
@@ -171,24 +117,20 @@ const ProjectsSection = () => {
             </button>
 
             <div className="flex gap-2">
-              {[...Array(totalPages)].map((_, i) =>
-                i + 1 === currentPage ? (
-                  <span
-                    key={i}
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-angsana-merah text-white font-bold"
-                  >
-                    {i + 1}
-                  </span>
-                ) : (
-                  <button
-                    key={i}
-                    onClick={() => setCurrentPage(i + 1)}
-                    className="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800"
-                  >
-                    {i + 1}
-                  </button>
-                ),
-              )}
+              {[...Array(totalPages)].map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`w-10 h-10 flex items-center justify-center rounded-full border font-bold transition-all
+                    ${
+                      i + 1 === currentPage
+                        ? "bg-angsana-merah text-white border-angsana-merah"
+                        : "border-gray-200 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-600"
+                    }`}
+                >
+                  {i + 1}
+                </button>
+              ))}
             </div>
 
             <button

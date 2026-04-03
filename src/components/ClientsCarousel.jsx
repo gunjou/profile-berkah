@@ -32,7 +32,10 @@ const ClientsCarousel = () => {
   );
 
   return (
-    <section className="w-full py-20 bg-gray-50 dark:bg-[#0f0f0f] transition-colors">
+    <section
+      id="clients"
+      className="w-full py-20 bg-gray-50 dark:bg-[#0f0f0f] transition-colors"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="text-center mb-16">
