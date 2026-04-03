@@ -22,19 +22,19 @@ export const projects = [
     title: "Perbaikan Sarana & Fasilitas PLN",
     desc: "Jasa perbaikan dan pemeliharaan gedung serta fasilitas operasional di area gardu induk.",
     category: "Maintenance",
-    img: "/images/maintenance/maintenance_4.jpeg",
+    img: "/images/maintenance/maintenance_4.jpg",
   },
   {
     title: "Pemeliharaan Sistem Pendingin",
     desc: "Perawatan pada sistem cooling tower dan jaringan perpipaan air pendingin industri.",
     category: "Maintenance",
-    img: "/images/maintenance/maintenance_5.jpeg",
+    img: "/images/maintenance/maintenance_5.jpg",
   },
   {
     title: "Maintenance Preventif Bulanan",
     desc: "Layanan kontrak maintenance berkala untuk memastikan zero-downtime pada alat produksi.",
     category: "Maintenance",
-    img: "/images/maintenance/maintenance_6.jpeg",
+    img: "/images/maintenance/maintenance_6.jpg",
   },
 
   // --- KATEGORI: MEP (9 Gambar) ---
@@ -166,6 +166,6 @@ export const projects = [
     title: "Bongkar Pasang Perancah Cepat",
     desc: "Layanan bongkar pasang scaffolding profesional dengan mengutamakan aspek keselamatan kerja.",
     category: "Scaffolding",
-    img: "/images/scaffolding/scaffolding_6.jpeg",
+    img: "/images/scaffolding/scaffolding_6.jpg",
   },
 ];

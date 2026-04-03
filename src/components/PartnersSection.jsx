@@ -4,7 +4,7 @@ import { FiCheckCircle, FiArrowUpRight } from "react-icons/fi";
 const partners = [
   {
     name: "Arita Indonesia",
-    logo: "/images/logo_arita.png",
+    logo: "/images/logo_arita.jpg",
     desc: `Arita merupakan salah satu produsen valve dan fitting industri terbesar di Indonesia. 
            Kami bekerja sama sebagai partner resmi wilayah Lombok untuk penyediaan, instalasi, 
            dan maintenance valve industri.`,
@@ -13,7 +13,7 @@ const partners = [
   },
   {
     name: "Hydromart Utama Indonesia",
-    logo: "/images/hydromart-logo.png",
+    logo: "/images/logo_hydromart.jpg",
     desc: `Hydromart adalah penyedia solusi water treatment dan equipment pendukung instalasi air 
            untuk sektor industri & fasilitas. Mendukung kebutuhan plumbing, RO, dan instalasi teknikal.`,
     badge: "Partner Resmi • Hydromart",
