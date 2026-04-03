@@ -2,26 +2,20 @@ import React from "react";
 import { FiCheckCircle } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
-// ❌ HAPUS IMPORT INI (Karena file ada di folder public/images)
-// import img1 from "/image/scaffholding_berkah.jpg";
-// import img2 from "/image/k3/3.jpg";
-
 const AboutUs = () => {
   const navigate = useNavigate();
 
-  // ✅ Definisikan path gambar sebagai string
-  const imgConstruction = "/images/scaffholding_berkah.jpg";
-  const imgTeam = "/images/k3/3.jpg";
+  const imgConstruction = "/images/about_1.jpg";
+  const imgTeam = "/images/about_2.jpg";
 
   return (
     <section
       id="tentang"
-      className="w-full py-20 bg-white dark:bg-[#1a1a1a] transition-colors"
+      className="w-full py-12 bg-white dark:bg-[#1a1a1a] transition-colors"
     >
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Side - Images */}
         <div className="relative w-full">
-          {/* Main Image */}
           <div className="border-2 border-angsana-merah p-2 inline-block shadow-xl">
             <img
               src={imgConstruction}
@@ -30,11 +24,10 @@ const AboutUs = () => {
             />
           </div>
 
-          {/* Floating Secondary Image */}
           <div className="absolute -bottom-10 right-4 lg:left-14 w-64 border-2 border-angsana-merah p-2 bg-white dark:bg-[#1a1a1a] shadow-2xl hidden md:block">
             <img
               src={imgTeam}
-              alt="Tim K3 Berkah Angsana"
+              alt="Tim Lapangan Berkah Angsana"
               className="w-full h-auto object-cover"
             />
           </div>
@@ -47,22 +40,28 @@ const AboutUs = () => {
           </p>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-teknika-hitam dark:text-white leading-tight mb-6">
-            Membangun Masa Depan Konstruksi yang Lebih Kokoh.
+            Solusi Teknik untuk Industri & Energi
           </h2>
 
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 max-w-xl text-lg">
-            PT Berkah Angsana berkomitmen menghadirkan solusi teknikal dan
-            konstruksi terintegrasi dengan standar kualitas tinggi, mengutamakan
-            ketepatan waktu serta aspek keamanan kerja yang ketat.
+          <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6 max-w-xl text-lg">
+            PT. Berkah Angsana Teknika bergerak di bidang Maintenance, MEP,
+            Pabrikasi, dan Scaffolding untuk kebutuhan industri dan energi.
+          </p>
+
+          {/* Highlight kecil untuk trust */}
+          <p className="text-sm text-gray-500 mb-8">
+            Berpengalaman dalam berbagai proyek maintenance, perbaikan
+            fasilitas, instalasi sistem, hingga pekerjaan fabrikasi dan
+            scaffolding di lingkungan industri.
           </p>
 
           {/* Features List */}
           <div className="space-y-5">
             {[
-              "Insinyur & Teknisi Bersertifikat BNSP",
-              "Manajemen Proyek Profesional & Transparan",
-              "Implementasi K3 (Safety) Sesuai Standar Global",
-              "Hasil Pekerjaan Efektif, Terukur & Bergaransi",
+              "Berpengalaman dalam proyek industri & energi",
+              "Pengerjaan maintenance dan perbaikan fasilitas secara menyeluruh",
+              "Penerapan standar keselamatan kerja (K3) di setiap proyek",
+              "Komitmen terhadap kualitas dan ketepatan waktu",
             ].map((feature, index) => (
               <div key={index} className="flex items-center gap-4 group">
                 <div className="flex-shrink-0">
@@ -84,7 +83,7 @@ const AboutUs = () => {
               flex items-center gap-3 tracking-widest
             "
           >
-            PELAJARI PROFIL PERUSAHAAN <span>→</span>
+            LIHAT PROFIL & PENGALAMAN KAMI <span>→</span>
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { FiMail, FiPhone, FiMapPin, FiLinkedin } from "react-icons/fi";
+import { FiMail, FiPhone, FiLinkedin } from "react-icons/fi";
 import { MdLocationPin } from "react-icons/md";
 
 import logoWhite from "../assets/berkahangsana_white.png";
@@ -9,7 +9,7 @@ const Footer = () => {
     <footer
       id="footer"
       className="
-        w-full pt-20 pb-10 
+        w-full pt-12 pb-10 
         bg-gradient-to-r from-black via-[#0c0003] to-[#60000d]
         dark:from-black dark:via-[#0c0003] dark:to-[#60000d]
         text-white
@@ -59,7 +59,7 @@ const Footer = () => {
           <h3 className="text-lg font-bold mb-4">Alamat Kantor</h3>
           <p className="text-sm text-gray-300 flex items-start gap-2 text-left">
             <MdLocationPin className="text-xl" />
-            Perumahan bukit citra kencana, <br /> Block B no. 35, Jl. Pengsong
+            Perumahan bukit citra kencana, <br /> Block B No. 35, Jl. Pengsong
             Raya, Desa Perampuan, Labuapi, <br />
             Lombok Barat, NTB. 83361
           </p>
@@ -88,7 +88,7 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="mt-16 border-t border-white/20 pt-5 text-center text-gray-300 text-sm">
+      <div className="mt-12 border-t border-white/20 pt-5 text-center text-gray-300 text-sm">
         © {new Date().getFullYear()} PT. Berkah Angsana Teknika | Semua hak
         dilindungi.
         <div className="mt-2 flex justify-center gap-6 text-xs">

@@ -17,7 +17,7 @@ const ClientsCarousel = () => {
   const ClientCard = ({ client }) => (
     <div className="group flex flex-col items-center justify-center w-full">
       {/* Logo Container - Menggunakan -translate-y-4 agar lebih terlihat */}
-      <div className="w-full h-32 flex items-center justify-center p-6 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 transition-all duration-500 group-hover:shadow-2xl group-hover:border-angsana-merah/30 group-hover:-translate-y-4">
+      <div className="w-full h-32 flex items-center justify-center p-6 bg-white dark:bg-[#ffffff] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 transition-all duration-500 group-hover:shadow-2xl group-hover:border-angsana-merah/30 group-hover:-translate-y-4">
         <img
           src={client.logo}
           alt={client.name}

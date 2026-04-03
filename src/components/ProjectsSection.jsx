@@ -92,7 +92,7 @@ const ProjectsSection = () => {
   return (
     <section
       id="proyek"
-      className="w-full py-20 bg-white dark:bg-[#111] transition-colors"
+      className="w-full py-12 bg-white dark:bg-[#111] transition-colors"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Title Section */}

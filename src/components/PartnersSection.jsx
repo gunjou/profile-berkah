@@ -23,7 +23,7 @@ const partners = [
 
 const PartnersSection = () => {
   return (
-    <section className="w-full py-20 bg-gray-50 dark:bg-[#0f0f0f] transition-colors">
+    <section className="w-full py-12 bg-gray-50 dark:bg-[#0f0f0f] transition-colors">
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Subtitle */}
         <p className="text-angsana-merah text-sm font-bold tracking-[0.2em] uppercase mb-3">

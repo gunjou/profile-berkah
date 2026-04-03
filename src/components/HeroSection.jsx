@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 const taglines = [
-  "Membangun Masa Depan dengan Kualitas Terbaik.",
-  "Solusi Konstruksi Andal untuk Berbagai Proyek.",
-  "Komitmen pada Keamanan dan Ketepatan.",
+  "Solusi Maintenance & Teknik untuk Industri.",
+  "Ahli MEP, Pabrikasi & Scaffolding Industri.",
+  "Partner Teknis untuk Proyek Energi & Industri.",
 ];
 
 const HeroSection = () => {
@@ -44,7 +44,7 @@ const HeroSection = () => {
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-[2px] bg-angsana-merah"></div>
           <p className="text-angsana-merah uppercase tracking-[0.2em] text-xs md:text-sm font-bold">
-            PT BERKAH ANGSANA CONSTRUCTION
+            PT BERKAH ANGSANA TEKNIKA
           </p>
         </div>
 
@@ -59,16 +59,20 @@ const HeroSection = () => {
           >
             {taglines[index]}
           </h1>
+          <p className="text-white/80 mt-4 max-w-xl text-sm">
+            Berpengalaman dalam berbagai proyek industri dan energi di
+            Indonesia.
+          </p>
         </div>
 
         {/* Action Buttons */}
         <div className="mt-10 flex flex-wrap gap-4">
           <button className="bg-angsana-merah text-white px-8 py-4 rounded-sm text-sm font-bold hover:bg-red-700 transition-all shadow-lg hover:shadow-red-500/40 flex items-center gap-3 tracking-widest">
-            GET IN TOUCH <span>→</span>
+            HUBUNGI KAMI <span>→</span>
           </button>
 
           <button className="border border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-sm text-sm font-bold hover:bg-white hover:text-black transition-all tracking-widest">
-            OUR PROJECTS
+            LIHAT PROYEK
           </button>
         </div>
       </div>

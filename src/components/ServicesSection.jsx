@@ -5,26 +5,26 @@ import { useProjectFilter } from "../context/ProjectFilterContext";
 const services = [
   {
     title: "Maintenance & Service",
-    desc: "Solusi perawatan dan perbaikan sipil, gedung, dan fasilitas operasional untuk memastikan keandalan infrastruktur.",
+    desc: "Pekerjaan maintenance dan perbaikan fasilitas industri, termasuk peralatan, gedung, dan sistem pendukung operasional.",
     img: "/images/maintenance_berkah.jpg",
     category: "Maintenance",
   },
   {
     title: "MEP (Mechanical, Electrical & Plumbing)",
-    desc: "Instalasi dan maintenance sistem mekanikal, elektrikal, panel, dan perpipaan sesuai standar industri.",
+    desc: "Instalasi dan perawatan sistem mekanikal, elektrikal, perpipaan, serta pekerjaan pendukung di lingkungan industri dan energi.",
     img: "/images/mep_berkah.jpg",
     category: "MEP",
   },
   {
     title: "Pabrikasi / Workshop",
-    desc: "Jasa pembuatan konstruksi metal, bracket, dudukan panel, serta perbaikan komponen mekanikal dengan kualitas tinggi.",
-    img: "/images/welder_berkah.jpg",
+    desc: "Fabrikasi komponen metal, pipa, dan struktur pendukung untuk kebutuhan proyek industri dengan pengerjaan presisi.",
+    img: "/images/pabrikasi_berkah.jpg",
     category: "Pabrikasi",
   },
   {
     title: "Scaffolding",
-    desc: "Sewa dan pemasangan scaffolding untuk berbagai kebutuhan konstruksi, perawatan, dan pekerjaan teknis.",
-    img: "/images/scaffholding_berkah.jpg",
+    desc: "Penyediaan dan pemasangan scaffolding untuk mendukung pekerjaan maintenance, inspeksi, dan perbaikan di area industri.",
+    img: "/images/scaffolding_berkah.jpg",
     category: "Scaffolding",
   },
 ];
@@ -44,7 +44,7 @@ const ServicesSection = () => {
   return (
     <section
       id="layanan"
-      className="w-full py-24 bg-white dark:bg-[#0f0f0f] transition-colors"
+      className="w-full py-12 bg-white dark:bg-[#0f0f0f] transition-colors"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Title Section */}
@@ -56,6 +56,11 @@ const ServicesSection = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-teknika-hitam dark:text-white leading-tight">
             Solusi Teknikal Terintegrasi.
           </h2>
+
+          <p className="text-gray-500 dark:text-gray-400 text-sm mt-4 max-w-2xl mx-auto">
+            Didukung pengalaman dalam berbagai proyek industri, energi, dan
+            infrastruktur di Indonesia.
+          </p>
 
           <div className="w-20 h-1 bg-angsana-merah mx-auto mt-6 rounded-full"></div>
         </div>

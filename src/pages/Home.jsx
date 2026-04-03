@@ -3,12 +3,12 @@
 import React from "react";
 import HeroSection from "../components/HeroSection";
 import AboutUs from "../components/AboutUs";
-import StatsSection from "../components/StatsSection";
 import ServicesSection from "../components/ServicesSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ClientsCarousel from "../components/ClientsCarousel";
 import PartnersSection from "../components/PartnersSection";
 import { ProjectFilterProvider } from "../context/ProjectFilterContext";
+import ExperienceSection from "../components/ExperienceSection";
 
 const Home = () => {
   return (
@@ -18,8 +18,9 @@ const Home = () => {
         <AboutUs />
         <ClientsCarousel />
         <ServicesSection />
-        <PartnersSection />
+        <ExperienceSection />
         <ProjectsSection />
+        <PartnersSection />
       </div>
     </ProjectFilterProvider>
   );
