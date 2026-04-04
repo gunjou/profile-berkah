@@ -47,7 +47,7 @@ const Header = () => {
     {
       label: "Halaman",
       dropdown: [
-        // { label: "Profil Perusahaan", path: "/profil-perusahaan" },
+        { label: "Karir", path: "/karir" },
         // { label: "Struktur Organisasi", path: "/struktur-organisasi" },
         { label: "FAQ", path: "/faq" },
       ],

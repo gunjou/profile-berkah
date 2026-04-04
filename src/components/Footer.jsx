@@ -124,7 +124,7 @@ const Footer = () => {
           <p className="text-sm text-gray-300 flex items-start gap-2 leading-relaxed">
             <MdLocationPin className="text-xl text-red-500 flex-shrink-0" />
             <p className="text-xs text-gray-300 flex items-start gap-2 text-left">
-              Perumahan bukit citra kencana, <br /> Block B No. 35, Jl. Pengsong
+              Perumahan Bukit Citra Kencana, <br /> Blok B No. 35, Jl. Pengsong
               Raya, Desa Perampuan, Labuapi, <br />
               Lombok Barat, NTB. 83361
             </p>

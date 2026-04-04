@@ -46,7 +46,7 @@ const HeroSection = () => {
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-[2px] bg-angsana-merah"></div>
           <p className="text-angsana-merah uppercase tracking-[0.2em] text-xs md:text-sm font-bold">
-            PT BERKAH ANGSANA TEKNIKA
+            PT. BERKAH ANGSANA TEKNIKA
           </p>
         </div>
 

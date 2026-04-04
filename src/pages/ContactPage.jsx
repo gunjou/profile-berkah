@@ -42,7 +42,7 @@ const ContactPage = () => {
         {/* Header Section - Lebih Pendek */}
         <div className="mb-12">
           <p className="text-angsana-merah text-[10px] font-black uppercase tracking-[0.3em] mb-2">
-            Hubungi Kami
+            Kontak
           </p>
           <h1 className="text-4xl md:text-5xl font-black text-teknika-hitam dark:text-white leading-tight">
             HUBUNGI <span className="text-angsana-merah">TIM KAMI.</span>
