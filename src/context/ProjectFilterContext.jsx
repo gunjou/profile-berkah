@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const ProjectFilterContext = createContext();
 
 export const ProjectFilterProvider = ({ children }) => {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("SEMUA");
 
   return (
     <ProjectFilterContext.Provider

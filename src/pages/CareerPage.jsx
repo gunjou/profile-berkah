@@ -1,5 +1,5 @@
 import React from "react";
-import { FiBriefcase, FiMapPin, FiSend, FiInfo, FiMail } from "react-icons/fi";
+import { FiBriefcase, FiMapPin, FiSend, FiInfo } from "react-icons/fi";
 
 const jobVacancies = [
   //   {

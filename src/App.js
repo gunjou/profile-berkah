@@ -12,6 +12,7 @@ import ContactPage from "./pages/ContactPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import CareerPage from "./pages/CareerPage";
+import Catalog from "./pages/Catalog";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/katalog" element={<Catalog />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/karir" element={<CareerPage />} />
             <Route path="/kontak" element={<ContactPage />} />

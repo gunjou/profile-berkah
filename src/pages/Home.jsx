@@ -6,14 +6,16 @@ import ProjectsSection from "../components/ProjectsSection";
 import ClientsCarousel from "../components/ClientsCarousel";
 import PartnersSection from "../components/PartnersSection";
 import ExperienceSection from "../components/ExperienceSection";
+import ProductSection from "../components/ProductSection";
 
 const Home = () => {
   return (
     <div className="min-h-screen antialiased bg-white">
       <HeroSection />
-      <AboutUs />
       <ClientsCarousel />
+      <AboutUs />
       <ServicesSection />
+      <ProductSection />
       <ExperienceSection />
       <ProjectsSection />
       <PartnersSection />

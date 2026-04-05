@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useProjectFilter } from "../context/ProjectFilterContext";
 
 const taglines = [
   "Solusi Maintenance & Teknik untuk Industri.",
@@ -9,6 +10,7 @@ const taglines = [
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const { setActiveCategory } = useProjectFilter();
   const [index, setIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -26,6 +28,15 @@ const HeroSection = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const goToProjects = (category) => {
+    setActiveCategory(category);
+    setTimeout(() => {
+      document.getElementById("proyek")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 50);
+  };
 
   return (
     <section
@@ -76,14 +87,17 @@ const HeroSection = () => {
             HUBUNGI KAMI <span>→</span>
           </button>
 
-          <button className="border border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-sm text-sm font-bold hover:bg-white hover:text-black transition-all tracking-widest">
+          <button
+            onClick={() => goToProjects("SEMUA")}
+            className="border border-white/30 text-white backdrop-blur-sm px-8 py-4 rounded-sm text-sm font-bold hover:bg-white hover:text-black transition-all tracking-widest"
+          >
             LIHAT PROYEK
           </button>
         </div>
       </div>
 
       {/* Indikator Slide (Opsional untuk mempercantik) */}
-      <div className="absolute bottom-10 left-6 flex gap-2">
+      <div className="absolute bottom-10 left-28 flex gap-2">
         {taglines.map((_, i) => (
           <div
             key={i}

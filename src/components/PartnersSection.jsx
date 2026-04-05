@@ -1,22 +1,19 @@
 import React from "react";
-import { FiCheckCircle, FiArrowUpRight } from "react-icons/fi";
+import { FiCheckCircle, FiArrowUpRight, FiLink } from "react-icons/fi";
 
 const partners = [
   {
     name: "Arita Indonesia",
     logo: "/images/logo_arita.webp",
-    desc: `Arita merupakan salah satu produsen valve dan fitting industri terbesar di Indonesia. 
-           Kami bekerja sama sebagai partner resmi wilayah Lombok untuk penyediaan, instalasi, 
-           dan maintenance valve industri.`,
-    badge: "Partner Resmi • Region Lombok",
+    desc: "Produsen valve dan fitting industri terbesar di Indonesia. Kami adalah partner resmi wilayah Lombok untuk penyediaan dan maintenance.",
+    badge: "Official Partner • Lombok",
     url: "https://www.arita.co.id/",
   },
   {
     name: "Hydromart Utama Indonesia",
     logo: "/images/logo_hydromart.webp",
-    desc: `Hydromart adalah penyedia solusi water treatment dan equipment pendukung instalasi air 
-           untuk sektor industri & fasilitas. Mendukung kebutuhan plumbing, RO, dan instalasi teknikal.`,
-    badge: "Partner Resmi • Hydromart",
+    desc: "Penyedia solusi water treatment dan equipment teknikal. Mendukung kebutuhan plumbing, RO, dan instalasi industri.",
+    badge: "Official Partner • Hydromart",
     url: "https://www.hydromart.co.id",
   },
 ];
@@ -25,81 +22,83 @@ const PartnersSection = () => {
   return (
     <section
       id="partner"
-      className="w-full py-12 bg-gray-50 dark:bg-[#0f0f0f] transition-colors"
+      /* Perubahan BG ke gray-50 */
+      className="relative w-full py-12 bg-gray-50 dark:bg-[#0c0c0c] transition-colors overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* Subtitle */}
-        <p className="text-angsana-merah text-sm font-bold tracking-[0.2em] uppercase mb-3">
-          Partner Strategis
-        </p>
+      {/* Ghost Text Background - Disesuaikan agar kontras di BG gray-50 & Dark Mode */}
+      <div className="absolute bottom-10 left-[-5%] text-[15vw] font-black text-white dark:text-[#1a1a1a] select-none -z-0 leading-none opacity-100 dark:opacity-40">
+        NETWORK
+      </div>
 
-        {/* Title */}
-        <h2 className="text-3xl md:text-5xl font-extrabold text-teknika-hitam dark:text-white leading-tight">
-          Sinergi Bersama Mitra Industri
-        </h2>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header - Asymmetrical Alignment */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 border-l-4 border-angsana-merah pl-6">
+          <div className="max-w-2xl">
+            <p className="text-angsana-merah text-xs md:text-sm font-black uppercase tracking-[0.3em] mb-4 flex items-center gap-3">
+              Partner Strategis
+            </p>
+            <h2 className="text-4xl md:text-5xl font-black text-teknika-hitam dark:text-white leading-tight uppercase">
+              SINERGI BERSAMA <br />
+              <span className="text-angsana-merah">MITRA INDUSTRI.</span>
+            </h2>
+          </div>
+          <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-medium max-w-xs md:text-right leading-relaxed">
+            Berkolaborasi dengan produsen terkemuka untuk memastikan kualitas
+            material terbaik di setiap proyek.
+          </p>
+        </div>
 
-        {/* Divider */}
-        <div className="w-20 h-1 bg-angsana-merah mx-auto mt-6 rounded-full"></div>
-
-        {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 mt-6 max-w-2xl mx-auto text-base leading-relaxed">
-          Kami berkolaborasi dengan produsen dan penyedia solusi teknikal
-          terkemuka untuk memastikan setiap proyek didukung oleh material dan
-          teknologi terbaik.
-        </p>
-
-        {/* Partner Cards */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+        {/* Partner Cards - Diubah ke bg-white agar pop di atas gray-50 */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {partners.map((p, idx) => (
             <div
               key={idx}
-              className="
-                bg-white dark:bg-[#1a1a1a]
-                rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800
-                p-10 flex flex-col items-center text-center
-                hover:shadow-xl hover:-translate-y-2
-                transition-all duration-500 group
-              "
+              className="group bg-white p-8 md:p-10 border border-gray-200 dark:border-white/5 rounded-sm flex flex-col md:flex-row items-center md:items-start gap-8 hover:border-angsana-merah/30 hover:shadow-2xl transition-all duration-500"
             >
-              {/* Logo Container */}
-              <div className="w-32 h-32 bg-gray-50 dark:bg-[#222] rounded-2xl flex items-center justify-center p-6 mb-6 transition-colors">
+              {/* Logo Container - Menggunakan bg-gray-50 agar kontras di dalam kartu putih */}
+              <div className="w-32 h-32 bg-gray-50 dark:bg-[#0f0f0f] p-6 flex items-center justify-center shrink-0 border border-gray-100 dark:border-gray-800 group-hover:border-angsana-merah/20 transition-all">
                 <img
                   src={p.logo}
-                  alt={`${p.name} Logo`}
+                  alt={p.name}
                   className="max-w-full max-h-full object-contain transition-all duration-500"
                 />
               </div>
 
-              {/* Text Info */}
-              <h3 className="text-2xl font-bold text-teknika-hitam dark:text-white">
-                {p.name}
-              </h3>
+              {/* Info Content */}
+              <div className="flex-1 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 mb-3 text-angsana-merah">
+                  <FiCheckCircle size={14} />
+                  <span className="text-[10px] font-black uppercase tracking-widest">
+                    {p.badge}
+                  </span>
+                </div>
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 mt-4 px-4 py-1.5 bg-red-50 dark:bg-red-950/30 text-angsana-merah rounded-full font-bold text-[10px] tracking-wider uppercase">
-                <FiCheckCircle />
-                <span>{p.badge}</span>
+                <h3 className="text-2xl font-black text-teknika-hitam dark:text-white uppercase tracking-tight mb-4 group-hover:text-angsana-merah transition-colors">
+                  {p.name}
+                </h3>
+
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-6 font-medium">
+                  {p.desc}
+                </p>
+
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[10px] font-black text-gray-400 dark:text-gray-600 hover:text-angsana-merah uppercase tracking-widest transition-all"
+                >
+                  <FiLink /> Kunjungi Website <FiArrowUpRight />
+                </a>
               </div>
-
-              <p className="text-gray-600 dark:text-gray-400 text-sm mt-6 leading-relaxed max-w-sm">
-                {p.desc}
-              </p>
-
-              {/* Button */}
-              <a
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="
-                  mt-8 inline-flex items-center gap-2 text-white text-xs font-bold tracking-widest
-                  bg-angsana-merah hover:bg-red-700 uppercase
-                  px-8 py-3.5 rounded-sm transition-all shadow-lg hover:shadow-red-500/30
-                "
-              >
-                Kunjungi Situs <FiArrowUpRight size={16} />
-              </a>
             </div>
           ))}
+        </div>
+
+        {/* Closing Tag */}
+        <div className="mt-16 text-center border-t border-gray-200 dark:border-gray-800 pt-10">
+          {/* <p className="text-[10px] font-bold text-gray-400 dark:text-gray-600 uppercase tracking-[0.4em]">
+            Supporting Your Engineering Excellence Since 2021
+          </p> */}
         </div>
       </div>
     </section>
