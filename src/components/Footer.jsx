@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FiMail, FiPhone, FiLinkedin } from "react-icons/fi";
+import { FiMail, FiPhone, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { MdLocationPin } from "react-icons/md";
 
 import logoWhite from "../assets/berkahangsana_white.png";
@@ -37,81 +37,109 @@ const Footer = () => {
 
         {/* 2 & 3. KONTAK DEPARTEMEN (MENGAMBIL 2 KOLOM) */}
         <div className="lg:col-span-2">
-          <h3 className="text-md font-bold mb-4 uppercase tracking-wider border-b border-white/10 pb-1 inline-block">
-            Kontak Departemen
+          <h3 className="text-[11px] font-black uppercase tracking-[0.3em] mb-5 border-b border-white/10 pb-1 inline-block">
+            Contact Directory
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
-            {/* Kolom Kiri: General & Scaffolding */}
-            <div className="space-y-4">
-              {/* General */}
-              <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5">
+            {/* Kolom Kiri: General & MEP */}
+            <div className="space-y-5">
+              {/* 1. General / Sales */}
+              <div className="flex flex-col">
                 <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mb-1">
                   General / Sales
                 </p>
-                <p className="text-[13px] font-bold text-white italic">
+                <p className="text-[14px] font-bold text-white italic leading-none mb-2">
                   Sales Department
                 </p>
-                <div className="text-[11px] text-gray-400 mt-0.5 leading-tight">
-                  <p className="flex items-center gap-1.5">
-                    <FiPhone size={10} /> 0370 785 3692
-                  </p>
-                  <p className="flex items-center gap-1.5 mt-0.5">
-                    <FiMail size={10} /> sales@berkahangsana.com
-                  </p>
+                <div className="flex flex-col gap-0">
+                  <div className="flex items-center gap-2 text-[12px] text-gray-300">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiPhone size={11} className="text-red-500" />
+                    </div>
+                    0370 785 3692
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-gray-300 tracking-wider lowercase">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiMail size={11} className="text-red-500" />
+                    </div>
+                    sales@berkahangsana.com
+                  </div>
                 </div>
               </div>
 
-              {/* Scaffolding (Pindah ke Sini) */}
-              <div className="pt-3 border-t border-white/5">
+              {/* 2. MEP Specialist */}
+              <div className="pt-4 border-t border-white/5 flex flex-col">
                 <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mb-1">
-                  Scaffolding
+                  MEP Specialist
                 </p>
-                <p className="text-[13px] font-bold text-white italic">Desti</p>
-                <div className="text-[11px] text-gray-400 mt-0.5 leading-tight">
-                  <p className="flex items-center gap-1.5">
-                    <FiPhone size={10} /> +62 852-3809-4256
-                  </p>
-                  <p className="flex items-center gap-1.5 mt-0.5">
-                    <FiMail size={10} /> scaffolding@berkahangsana.com
-                  </p>
+                <p className="text-[14px] font-bold text-white italic leading-none mb-2">
+                  Taqi
+                </p>
+                <div className="flex flex-col gap-0">
+                  <div className="flex items-center gap-2 text-[12px] text-gray-300">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiPhone size={11} className="text-red-500" />
+                    </div>
+                    +62 819-0764-7544
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-gray-300 tracking-wider lowercase">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiMail size={11} className="text-red-500" />
+                    </div>
+                    mep@berkahangsana.com
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Kolom Kanan: MEP & Pabrikasi */}
-            <div className="space-y-4">
-              {/* MEP (Pindah ke Sini) */}
-              <div>
+            {/* Kolom Kanan: Scaffolding & Pabrikasi */}
+            <div className="space-y-5">
+              {/* 3. Scaffolding */}
+              <div className="flex flex-col">
                 <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mb-1">
-                  MEP
+                  Scaffolding
                 </p>
-                <p className="text-[13px] font-bold text-white italic">
-                  Jayadi
+                <p className="text-[14px] font-bold text-white italic leading-none mb-2">
+                  Desti
                 </p>
-                <p className="text-[11px] text-gray-400 flex items-center gap-1.5 mt-0.5">
-                  <FiPhone size={10} /> +62 813-8480-0091
-                </p>
-                <p className="flex items-center flex items-center gap-1.5 mt-0.5 text-gray-400/0">
-                  .
-                </p>
+                <div className="flex flex-col gap-0">
+                  <div className="flex items-center gap-2 text-[12px] text-gray-300">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiPhone size={11} className="text-red-500" />
+                    </div>
+                    +62 852-3809-4256
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-gray-300 tracking-wider lowercase">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiMail size={11} className="text-red-500" />
+                    </div>
+                    scaffolding@berkahangsana.com
+                  </div>
+                </div>
               </div>
 
-              {/* Pabrikasi */}
-              <div className="border-t border-white/5">
+              {/* 4. Pabrikasi */}
+              <div className="pt-4 border-t border-white/5 flex flex-col">
                 <p className="text-[9px] font-black text-red-500 uppercase tracking-widest mb-1">
-                  Pabrikasi
+                  Pabrikasi / Welding
                 </p>
-                <p className="text-[13px] font-bold text-white italic">
+                <p className="text-[14px] font-bold text-white italic leading-none mb-2">
                   Saliman
                 </p>
-                <div className="text-[11px] text-gray-400 mt-0.5 leading-tight">
-                  <p className="flex items-center gap-1.5">
-                    <FiPhone size={10} /> +62 853-3304-2242
-                  </p>
-                  <p className="flex items-center gap-1.5 mt-0.5">
-                    <FiMail size={10} /> pabrikasi@berkahangsana.com
-                  </p>
+                <div className="flex flex-col gap-0">
+                  <div className="flex items-center gap-2 text-[12px] text-gray-300">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiPhone size={11} className="text-red-500" />
+                    </div>
+                    +62 853-3304-2242
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-gray-300 tracking-wider lowercase">
+                    <div className="w-5 h-5 flex items-center justify-center bg-white/5 rounded-sm shrink-0">
+                      <FiMail size={11} className="text-red-500" />
+                    </div>
+                    pabrikasi@berkahangsana.com
+                  </div>
                 </div>
               </div>
             </div>
@@ -135,7 +163,7 @@ const Footer = () => {
         <div className="lg:col-span-1">
           <h3 className="text-lg font-bold mb-6">Ikuti Kami</h3>
           <div className="flex flex-col gap-6">
-            <div className="flex justify-center">
+            <div className="flex justify-center gap-3">
               <a
                 href="https://id.linkedin.com/company/berkah-angsana"
                 target="_blank"
@@ -148,6 +176,19 @@ const Footer = () => {
             "
               >
                 <FiLinkedin className="text-xl" />
+              </a>
+              <a
+                href="https://www.instagram.com/berkahangsana.official/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+            w-10 h-10 flex items-center justify-center 
+            bg-white/10 hover:bg-white/20 
+            rounded-md border border-white/20 
+            transition
+            "
+              >
+                <FiInstagram className="text-xl" />
               </a>
             </div>
           </div>

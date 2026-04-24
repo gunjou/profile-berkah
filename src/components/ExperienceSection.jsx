@@ -3,7 +3,7 @@ import React from "react";
 const dataRiwayat = [
   {
     tahun: "2025",
-    total: "Rp 11.3M+",
+    total: "Rp 13.8M+",
     proyek: "35+ Paket Pekerjaan",
     fokus: "Spesialis Teknis & Skala Besar",
     highlight:
@@ -11,7 +11,7 @@ const dataRiwayat = [
   },
   {
     tahun: "2024",
-    total: "Rp 6.7M+",
+    total: "Rp 8.3M+",
     proyek: "28+ Paket Pekerjaan",
     fokus: "Ekspansi Infrastruktur",
     highlight:
@@ -19,7 +19,7 @@ const dataRiwayat = [
   },
   {
     tahun: "2023",
-    total: "Rp 2.0M+",
+    total: "Rp 3.1M+",
     proyek: "22+ Paket Pekerjaan",
     fokus: "Mekanikal & Fabrikasi",
     highlight:
@@ -27,7 +27,7 @@ const dataRiwayat = [
   },
   {
     tahun: "2022",
-    total: "Rp 1.2M+",
+    total: "Rp 2.9M+",
     proyek: "18+ Paket Pekerjaan",
     fokus: "Pemeliharaan Fasilitas",
     highlight:
@@ -35,7 +35,7 @@ const dataRiwayat = [
   },
   {
     tahun: "2021",
-    total: "Rp 950Jt+",
+    total: "Rp 980Jt+",
     proyek: "15+ Paket Pekerjaan",
     fokus: "Fondasi Awal",
     highlight:

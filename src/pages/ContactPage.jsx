@@ -17,9 +17,9 @@ const contactDepts = [
   },
   {
     name: "MEP Specialist",
-    person: "Jayadi",
-    phone: "+62 813-8480-0091",
-    email: "sales@berkahangsana.com",
+    person: "Taqi",
+    phone: "+62 819-0764-7544",
+    email: "mep@berkahangsana.com",
   },
   {
     name: "Scaffolding Division",
